@@ -83,7 +83,7 @@ int main(int argc, char *argv[]) {
       for (const auto &neighbor : adj[node]) {
         marked[neighbor] = true;
         for (auto it = degrees.begin(); it != degrees.end(); ++it) {
-          if (it->second == node) {
+          if (it->second == neighbor) {
             degrees.erase(it);
             break;
           }
