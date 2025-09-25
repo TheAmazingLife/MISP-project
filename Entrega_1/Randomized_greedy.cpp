@@ -1,4 +1,4 @@
-#include "GraphReader.h"
+#include "../utils/GraphReader.h"
 #include <algorithm>
 #include <chrono>
 #include <iostream>
@@ -27,10 +27,10 @@ int main(int argc, char *argv[]) {
   // std::cout << "Graph loaded successfully. Number of nodes: " << V <<
   // std::endl;
 
-  // Greedy Algorithm:
+  // Randomized Greedy Algorithm:
   // Step 1: Get the degrees of each node
   std::vector<std::pair<int, int>> degrees(V + 1);
-  std::vector<int> lcr(V + 1);
+  std::vector<int> rcl(V + 1);
 
   for (int i = 0; i <= V; i++) {
     degrees[i] = {adj[i].size(), i}; // {degree, index}
@@ -49,23 +49,26 @@ int main(int argc, char *argv[]) {
   // Step 3: Node selection
   std::vector<int> independentSet;
   std::vector<bool> marked(V + 1, 0);
+  int unmarked = V;
 
   auto start = std::chrono::high_resolution_clock::now();
 
-  while (degrees.size()) {
-    lcr.clear();
-    int tam = std::min(k, (int)degrees.size());
-    for (int i = 1; i <= tam; i++) {
+  while (unmarked > 0) {
+    rcl.clear();
+    int tam = degrees.size();
+    int counter = 0;
+    for (int i = 1; i < tam && counter != k; i++) {
       int node = degrees[i].second;
-      if (!marked[node])
-        lcr.push_back(node);
+      if (!marked[node]) {
+        rcl.push_back(node);
+        counter++;
+      }
     }
 
-    if (lcr.empty())
-      break;
-
-    int idx = rand() % lcr.size();
-    int node = lcr[idx];
+    // if (rcl.empty())
+    //  break;
+    int idx = rand() % rcl.size();
+    int node = rcl[idx];
 
     if (node == 0)
       continue;
@@ -73,20 +76,12 @@ int main(int argc, char *argv[]) {
     if (!marked[node]) {
       independentSet.push_back(node);
       marked[node] = true;
-      for (auto it = degrees.begin(); it != degrees.end(); ++it) {
-        if (it->second == node) {
-          degrees.erase(it);
-          break;
-        }
-      }
+      unmarked--;
 
       for (const auto &neighbor : adj[node]) {
-        marked[neighbor] = true;
-        for (auto it = degrees.begin(); it != degrees.end(); ++it) {
-          if (it->second == neighbor) {
-            degrees.erase(it);
-            break;
-          }
+        if (!marked[neighbor]) {
+          marked[neighbor] = true;
+          unmarked--;
         }
       }
     }
