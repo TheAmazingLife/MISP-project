@@ -1,4 +1,7 @@
-#include "GraphReader.h"
+// g++ -std=c++17 Entrega_1/greedyDet.cpp utils/GraphReader.cpp -o Entrega_1/testing/greedyDet
+// ./greedyDet -i Entrega_1/Greedy/small_graph.graph
+
+#include "../utils/GraphReader.h"
 #include <algorithm>
 #include <chrono>
 #include <iostream>
