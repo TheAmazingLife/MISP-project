@@ -1,0 +1,3 @@
+# Ignorar la carpeta de datasets y archivos binarios
+/dataset_grafos_no_dirigidos/
+/a.out
