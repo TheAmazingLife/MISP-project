@@ -1,3 +1,6 @@
+// g++ -std=c++17 Entrega_1/greedyRand.cpp utils/GraphReader.cpp -o Entrega_1/testing/greedyRand
+// ./greedyRand -i Entrega_1/Greedy/small_graph.graph
+
 #include "../utils/GraphReader.h"
 #include <algorithm>
 #include <chrono>
@@ -93,16 +96,5 @@ int main(int argc, char *argv[]) {
   std::cout << independentSet.size()
             << "\n";                    // Objective value (solution quality)
   std::cout << elapsed.count() << "\n"; // Time used
-  std::cout << "{";
-  /*
-    for (int i = 0; i < independentSet.size(); i++) {
-      if (i == independentSet.size() - 1) {
-        std::cout << independentSet[i];
-      } else {
-        std::cout << independentSet[i] << ',';
-      }
-    }
-    std::cout << "} /n";
-    */
   return 0;
 }
