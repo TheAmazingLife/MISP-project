@@ -40,10 +40,8 @@ int main(int argc, char *argv[]) {
     return 1;
   }
 
-  // std::cout << "Graph loaded successfully. Number of nodes: " << V <<
-  // std::endl;
+  // --- Randomized Greedy Algorithm ---
 
-  // Randomized Greedy Algorithm:
   // Step 1: Get the degrees of each node
   std::vector<std::pair<int, int>> degrees(V + 1);
   std::vector<int> rcl(V + 1);
@@ -54,13 +52,6 @@ int main(int argc, char *argv[]) {
 
   // Step 2: Sort the nodes by degree (ascending)
   std::sort(degrees.begin(), degrees.end());
-
-  /*
-  std::cout << "Nodes sorted by degree:\n";
-  for (const auto &par : degrees) {
-    std::cout << "Node: " << par.second << ", Degree: " << par.first << '\n';
-  }
-  */
 
   // Step 3: Node selection
   std::vector<int> independentSet;
@@ -81,8 +72,6 @@ int main(int argc, char *argv[]) {
       }
     }
 
-    // if (rcl.empty())
-    //  break;
     int idx = rand() % rcl.size();
     int node = rcl[idx];
 

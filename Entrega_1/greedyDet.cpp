@@ -37,10 +37,8 @@ int main(int argc, char *argv[]) {
     return 1;
   }
 
-  // std::cout << "Graph loaded successfully. Number of nodes: " << V <<
-  // std::endl;
-
-  // Greedy Algorithm:
+  // --- Greedy Algorithm ---
+  
   // Step 1: Get the degrees of each node
   std::vector<std::pair<int, int>> degrees(V + 1);
   for (int i = 0; i <= V; i++) {
@@ -49,13 +47,6 @@ int main(int argc, char *argv[]) {
 
   // Step 2: Sort the nodes by degree (ascending)
   std::sort(degrees.begin(), degrees.end());
-
-  /*
-  std::cout << "Nodes sorted by degree:\n";
-  for (const auto &par : degrees) {
-    std::cout << "Node: " << par.second << ", Degree: " << par.first << '\n';
-  }
-  */
 
   // Step 3: Node selection
   std::vector<int> independentSet;
