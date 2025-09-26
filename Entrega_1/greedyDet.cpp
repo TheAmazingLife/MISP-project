@@ -1,5 +1,17 @@
-// g++ -std=c++17 Entrega_1/greedyDet.cpp utils/GraphReader.cpp -o Entrega_1/testing/greedyDet
-// ./greedyDet -i Entrega_1/Greedy/small_graph.graph
+/*
+Compilar:
+g++ -std=c++17 <fuente> <dependencias> -o <greedyDet>
+
+Ejecutar:
+<greedyDet> -i <instancia-problema>
+
+Ejemplo de compilación:
+g++ -std=c++17 Entrega_1/greedyDet.cpp utils/GraphReader.cpp -o Entrega_1/testing/greedyDet
+
+Ejemplo de ejecución:
+./Entrega_1/testing/greedyDet -i Entrega_1/testing/small_graph.graph
+*/
+
 
 #include "../utils/GraphReader.h"
 #include <algorithm>

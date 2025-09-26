@@ -1,5 +1,18 @@
-// g++ -std=c++17 Entrega_1/greedyRand.cpp utils/GraphReader.cpp -o Entrega_1/testing/greedyRand
-// ./greedyRand -i Entrega_1/Greedy/small_graph.graph
+/*
+Compilar:
+g++ -std=c++17 <fuente> <dependencias> -o <greedyRand>
+
+Ejecutar:
+<greedyRand> -i <instancia-problema> <Longitud-RCL>
+
+donde <Longitud-RCL> corresponde al tamaño de la lista restringida de candidatos (k).
+
+Ejemplo de compilación:
+g++ -std=c++17 Entrega_1/greedyRand.cpp utils/GraphReader.cpp -o Entrega_1/testing/greedyRand
+
+Ejemplo de ejecución:
+./Entrega_1/testing/greedyRand -i Entrega_1/testing/small_graph.graph 3
+*/
 
 #include "../utils/GraphReader.h"
 #include <algorithm>
