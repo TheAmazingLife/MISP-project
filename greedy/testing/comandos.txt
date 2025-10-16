@@ -1,0 +1,8 @@
+g++ -std=c++17 greedy/source/greedyDet.cpp greedy/source/utils/GraphReader.cpp -o greedy/testing/greedyDet
+./greedy/testing/greedyDet -i greedy/testing/small_graph.graph
+
+g++ -std=c++17 greedy/source/greedyRand.cpp greedy/source/utils/GraphReader.cpp -o greedy/testing/greedyRand
+./greedy/testing/greedyRand -i greedy/testing/small_graph.graph k
+
+./greedy/testing/greedyDet -i dataset_grafos_no_dirigidos/new_1000_dataset/tuning_instances/erdos_n1000_p0c0.1_0.graph
+./greedy/testing/greedyRand -i dataset_grafos_no_dirigidos/new_1000_dataset/tuning_instances/erdos_n1000_p0c0.1_0.graph 20
