@@ -20,13 +20,10 @@ Ejemplo de ejecución:
 #include <algorithm>
 #include <chrono>
 #include <cmath>
+#include <cstdlib>
 #include <iostream>
 #include <random>
 #include <string>
-#include <vector>
-
-#include <algorithm>
-#include <cstdlib>
 #include <vector>
 
 std::vector<int>
@@ -130,7 +127,7 @@ int main(int argc, char *argv[]) {
   // Graph reading:
   if (argc < 5 || std::string(argv[1]) != "-i") {
     std::cerr << "Usage: <meta_sa> -i <instancia-problema> "
-                 "<temperatura-inicial> <decay>\n";
+                 "<temperatura-inicial> <alpha>\n";
     return 1;
   }
 
@@ -145,11 +142,20 @@ int main(int argc, char *argv[]) {
     return 1;
   }
 
-  // --- Simulated Annealing Algorithm ---
-  std::vector<int> actual_solution = greedyDet(V, adj);
-
   auto start_time = std::chrono::steady_clock::now();
   const double time_limit_seconds = 10.0;
+
+  // --- Simulated Annealing Algorithm ---
+  std::vector<int> actual_solution = greedyDet(V, adj);
+  std::vector<int> best_solution = actual_solution;
+  std::vector<int> greedy_solution = actual_solution;
+
+  auto greedy_time_point = std::chrono::steady_clock::now();
+  double time_best_solution_found =
+      std::chrono::duration<double>(greedy_time_point - start_time).count();
+
+  std::cout << best_solution.size() << " " << time_best_solution_found
+            << std::endl;
 
   double temp = initial_temp;
 
@@ -173,6 +179,16 @@ int main(int argc, char *argv[]) {
     // If it is better, it is accepted immediately
     if (neighbor_cost < actual_cost) {
       actual_solution = S_prime;
+      best_solution = actual_solution;
+
+      auto now_point = std::chrono::steady_clock::now();
+      time_best_solution_found =
+          std::chrono::duration<double>(now_point - start_time).count();
+
+      if (time_best_solution_found < time_limit_seconds) {
+        std::cout << best_solution.size() << " " << time_best_solution_found
+                  << std::endl;
+      }
     } else {
 
       // 1. (ΔE)
@@ -193,10 +209,8 @@ int main(int argc, char *argv[]) {
     temp *= alpha; // geometric cooling
   }
 
-  std::cout << actual_solution.size() << "\n";
-  for (int i = 0; i < actual_solution.size(); i++)
-    std::cout << actual_solution[i] << " ";
-  std::cout << "\n";
+  std::cout << best_solution.size() << " " << time_best_solution_found
+            << std::endl;
 
   return 0;
 }
