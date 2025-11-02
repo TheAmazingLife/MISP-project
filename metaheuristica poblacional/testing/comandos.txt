@@ -1,0 +1,24 @@
+NOTA: ACTUALIZAR!!
+
+g++ -std=c++17 metaheuristica/source/meta_sa.cpp metaheuristica/source/utils/GraphReader.cpp -o metaheuristica/testing/meta_sa
+
+# Test con grafo pequeño
+./metaheuristica/testing/meta_sa -i metaheuristica/testing/small_graph.graph 100 0.99
+
+# Grafos n=1000 (parámetros recomendados: T_inicial=1000, alpha=0.9993)
+./metaheuristica/testing/meta_sa -i dataset_grafos_no_dirigidos/new_1000_dataset/erdos_n1000_p0c0.1_1.graph 1000 0.9993
+./metaheuristica/testing/meta_sa -i dataset_grafos_no_dirigidos/new_1000_dataset/erdos_n1000_p0c0.05_1.graph 1000 0.9993
+
+# Grafos n=2000 (parámetros recomendados: T_inicial=2000, alpha=0.9995)
+./metaheuristica/testing/meta_sa -i dataset_grafos_no_dirigidos/new_2000_dataset/erdos_n2000_p0c0.1_1.graph 2000 0.9995
+
+# Grafos n=3000 (parámetros recomendados: T_inicial=3000, alpha=0.9996)
+./metaheuristica/testing/meta_sa -i dataset_grafos_no_dirigidos/new_3000_dataset/erdos_n3000_p0c0.1_1.graph 3000 0.9996
+
+# Tuning: Experimentar con diferentes valores de alpha
+# Para n=1000, probar alpha entre 0.9990 y 0.9999
+./metaheuristica/testing/meta_sa -i dataset_grafos_no_dirigidos/new_1000_dataset/tuning_instances/erdos_n1000_p0c0.1_0.graph 1000 0.9990
+./metaheuristica/testing/meta_sa -i dataset_grafos_no_dirigidos/new_1000_dataset/tuning_instances/erdos_n1000_p0c0.1_0.graph 1000 0.9993
+./metaheuristica/testing/meta_sa -i dataset_grafos_no_dirigidos/new_1000_dataset/tuning_instances/erdos_n1000_p0c0.1_0.graph 1000 0.9996
+./metaheuristica/testing/meta_sa -i dataset_grafos_no_dirigidos/new_1000_dataset/tuning_instances/erdos_n1000_p0c0.1_0.graph 1000 0.9999
+
