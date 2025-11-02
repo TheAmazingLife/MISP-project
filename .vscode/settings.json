@@ -57,6 +57,11 @@
         "variant": "cpp",
         "text_encoding": "cpp",
         "cinttypes": "cpp",
-        "set": "cpp"
+        "set": "cpp",
+        "bitset": "cpp",
+        "ranges": "cpp",
+        "semaphore": "cpp",
+        "stop_token": "cpp",
+        "thread": "cpp"
     }
 }
