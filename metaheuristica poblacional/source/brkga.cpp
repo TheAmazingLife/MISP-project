@@ -12,15 +12,17 @@ int main(int argc, char *argv[]) {
   */
 
   // Graph reading:
-  if (argc != 13) {
+  if (argc != 15) {
     std::cerr << "Uso: ./brkga -i <instancia.txt> -t <tiempoSegundos> "
-                 "-p <poblacion> -pe <elite> -pm <mutantes> -rhoe <herencia>\n";
+                 "-p <poblacion> -pe <elite> -pm <mutantes> -rhoe <herencia> "
+                 "-seed <semilla>\n";
     return 1;
   }
 
   std::string filename;
   double s = 0, pe = 0, pm = 0, rhoe = 0;
   int p = 0;
+  unsigned int seed = 0;
 
   // --- Leer argumentos ---
   for (int i = 1; i < argc; i++) {
@@ -37,6 +39,8 @@ int main(int argc, char *argv[]) {
       pm = std::stod(argv[++i]);
     else if (arg == "-rhoe")
       rhoe = std::stod(argv[++i]);
+    else if (arg == "-seed")
+      rhoe = std::stoul(argv[++i]);
     else {
       std::cerr << "Argumento desconocido: " << arg << "\n";
       return 1;
@@ -52,14 +56,14 @@ int main(int argc, char *argv[]) {
   }
 
   // --- BRKGA Algorithm ---
-  BRKGA brkga(V, p, pe, pm, rhoe, s, adj);
+  BRKGA brkga(V, p, pe, pm, rhoe, s, adj, seed);
   std::vector<int> independentSet = brkga.getSolution();
 
+  // for (int i = 0; i < independentSet.size(); i++) {
+  //   std::cout << independentSet[i] << " ";
+  // }
+  // std::cout << "\n";
   std::cout << independentSet.size() << "\n";
-  for (int i = 0; i < independentSet.size(); i++) {
-    std::cout << independentSet[i] << " ";
-  }
-  std::cout << "\n";
 
   return 0;
 }

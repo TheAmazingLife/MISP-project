@@ -9,9 +9,11 @@ bool Individuo::operator<(const Individuo &other) const {
 }
 
 BRKGA::BRKGA(int n, int p, double pe, double pm, double rhoe, double s,
-             std::vector<std::vector<int>> &adj)
+             std::vector<std::vector<int>> &adj, unsigned int seed)
     : n(n), p(p), pe(pe), pm(pm), rhoe(rhoe), s(s), poblacion(p),
-      nueva_poblacion(p), adj(adj) {}
+      nueva_poblacion(p), adj(adj), rng(seed) {
+  best_global_fitness = 0;
+}
 
 BRKGA::~BRKGA() {}
 
@@ -22,14 +24,12 @@ Definimos el fitness de cada individuo como -1 inicialmente, indicando que aún
 no ha sido evaluado.
 */
 void BRKGA::inicializar_poblacion() {
-  std::random_device rd;
-  std::mt19937 gen(rd());
   std::uniform_real_distribution<double> dist(0.0, 1.0);
   for (int i = 0; i < p; i++) {
     Individuo individuo;
     cromosoma cr(n);
     for (int j = 0; j < n; j++) {
-      cr[j].first = dist(gen);
+      cr[j].first = dist(rng);
       cr[j].second = j + 1;
     }
     individuo.cr = cr;
@@ -37,6 +37,17 @@ void BRKGA::inicializar_poblacion() {
 
     poblacion[i] = individuo;
   }
+  std::sort(poblacion.begin(), poblacion.end());
+
+  // Actualiza el mejor global
+  best_global = poblacion[0];
+  best_global_fitness = getFitness(decoder(best_global));
+
+  // Imprime el primer log "Any-Time"
+  auto now = std::chrono::high_resolution_clock::now();
+  double elapsed_s = std::chrono::duration<double>(now - start_time).count();
+
+  std::cerr << best_global_fitness << " " << elapsed_s << "\n";
 }
 
 std::vector<int> BRKGA::decoder(Individuo ind) {
@@ -64,9 +75,7 @@ std::vector<int> BRKGA::decoder(Individuo ind) {
   return independentSet;
 }
 
-double BRKGA::getFitness(std::vector<int> decodified) {
-  return decodified.size();
-}
+int BRKGA::getFitness(std::vector<int> decodified) { return decodified.size(); }
 
 void BRKGA::generacion() {
   /*
@@ -80,21 +89,31 @@ void BRKGA::generacion() {
 
   // Ordenamos la población por fitness para poder seleccionar a los elite.
   std::sort(poblacion.begin(), poblacion.end());
-  std::cout << "Mejor Fitness actual: " << nueva_poblacion[0].fitness << "\n";
+
+  // Any-Time
+  if (poblacion[0].fitness > best_global_fitness) {
+    best_global_fitness = poblacion[0].fitness;
+    best_global = poblacion[0];
+
+    // Imprime el log "Any-Time"
+    auto now = std::chrono::high_resolution_clock::now();
+    double elapsed_s = std::chrono::duration<double>(now - start_time).count();
+
+    std::cerr << best_global_fitness << " " << elapsed_s << "\n";
+  }
+
   for (int i = 0; i < nElite; i++) {
     nueva_poblacion[i] =
         poblacion[i]; // la elite pasa directamente a la nueva generación.
   }
 
   // Se crean mutantes
-  std::random_device rd;
-  std::mt19937 gen(rd());
   std::uniform_real_distribution<double> dist(0.0, 1.0);
   for (int i = 0; i < nMutante; i++) {
     Individuo individuo;
     cromosoma cr(n);
     for (int j = 0; j < n; j++) {
-      cr[j].first = dist(gen);
+      cr[j].first = dist(rng);
       cr[j].second = j + 1;
     }
     individuo.cr = cr;
@@ -103,7 +122,6 @@ void BRKGA::generacion() {
     nueva_poblacion[nElite + i] = individuo;
   }
 
-  // antes de esto, hacer los mutantes
   /* Realizamos los cruces para generar los individuos restantes de la nueva
   población. Lo que hacemos es seleccionar un padre elite y otro no elite de
   manera aleatoria. Generamos un hijo tomando cada gen del padre elite con
@@ -112,20 +130,19 @@ void BRKGA::generacion() {
 
   // Generamos dos distribuciones uniformes para seleccionar padres elite y no
   // elite de manera aleatoria.
-  std::mt19937 rango(rd());
   std::uniform_int_distribution<int> distElite(0, nElite - 1);
   std::uniform_int_distribution<int> distNonElite(nElite, p - 1);
 
   for (int i = 0; i < nCruce; i++) {
-    Individuo padre_elite = poblacion[distElite(rango)];
-    Individuo padre_no_elite = poblacion[distNonElite(rango)];
+    Individuo padre_elite = poblacion[distElite(rng)];
+    Individuo padre_no_elite = poblacion[distNonElite(rng)];
 
     Individuo hijo;
     hijo.cr.resize(n);
 
     std::uniform_real_distribution<double> coin(0.0, 1.0);
     for (int j = 0; j < n; ++j) {
-      if (coin(rango) < rhoe) {
+      if (coin(rng) < rhoe) {
         hijo.cr[j].first = padre_elite.cr[j].first;
         hijo.cr[j].second = padre_elite.cr[j].second;
       } else {
@@ -138,7 +155,6 @@ void BRKGA::generacion() {
     nueva_poblacion[nElite + nMutante + i] = hijo;
   }
   poblacion = nueva_poblacion;
-
 }
 
 std::vector<int> BRKGA::getSolution() {
@@ -149,5 +165,6 @@ std::vector<int> BRKGA::getSolution() {
   while (std::chrono::high_resolution_clock::now() < end) {
     generacion();
   }
-  return decoder(poblacion[0]);
+
+  return decoder(best_global);
 }
