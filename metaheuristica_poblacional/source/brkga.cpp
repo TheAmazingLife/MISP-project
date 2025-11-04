@@ -63,7 +63,8 @@ int main(int argc, char *argv[]) {
   //   std::cout << independentSet[i] << " ";
   // }
   // std::cout << "\n";
-  std::cout << independentSet.size() << "\n";
+  int aux = independentSet.size();
+  std::cout << aux * (-1) << "\n";
 
   return 0;
 }

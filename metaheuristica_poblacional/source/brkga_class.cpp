@@ -47,7 +47,7 @@ void BRKGA::inicializar_poblacion() {
   auto now = std::chrono::high_resolution_clock::now();
   double elapsed_s = std::chrono::duration<double>(now - start_time).count();
 
-  std::cerr << best_global_fitness << " " << elapsed_s << "\n";
+  // std::cerr << best_global_fitness << " " << elapsed_s << "\n";
 }
 
 std::vector<int> BRKGA::decoder(Individuo ind) {
@@ -99,7 +99,7 @@ void BRKGA::generacion() {
     auto now = std::chrono::high_resolution_clock::now();
     double elapsed_s = std::chrono::duration<double>(now - start_time).count();
 
-    std::cerr << best_global_fitness << " " << elapsed_s << "\n";
+    // std::cerr << best_global_fitness << " " << elapsed_s << "\n";
   }
 
   for (int i = 0; i < nElite; i++) {
