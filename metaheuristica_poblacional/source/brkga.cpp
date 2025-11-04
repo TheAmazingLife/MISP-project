@@ -40,7 +40,7 @@ int main(int argc, char *argv[]) {
     else if (arg == "-rhoe")
       rhoe = std::stod(argv[++i]);
     else if (arg == "-seed")
-      rhoe = std::stoul(argv[++i]);
+      seed = std::stoul(argv[++i]);
     else {
       std::cerr << "Argumento desconocido: " << arg << "\n";
       return 1;

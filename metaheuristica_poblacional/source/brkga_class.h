@@ -1,6 +1,7 @@
 #ifndef BRKGA_CLASS_H
 #define BRKGA_CLASS_H
 
+#include <chrono>
 #include <random>
 #include <utility>
 #include <vector>

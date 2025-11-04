@@ -1,0 +1,200 @@
+=================================================================================
+COMANDOS METAHEURÍSTICA POBLACIONAL (BRKGA) - MISP
+=================================================================================
+
+ESTRUCTURA DE PARÁMETROS:
+  -i <archivo>    : Archivo del grafo (.graph)
+  -t <segundos>   : Tiempo de ejecución (10-300)
+  -p <población>  : Tamaño de la población (50-500)
+  -pe <elite>     : Proporción de elite (0.10-0.25)
+  -pm <mutantes>  : Proporción de mutantes (0.10-0.25)
+  -rhoe <herencia>: Probabilidad de heredar del elite (0.60-0.80)
+  -seed <semilla> : Semilla para el generador aleatorio (entero positivo)
+
+=================================================================================
+1. COMPILACIÓN
+=================================================================================
+
+# Compilación básica (desde metaheuristica_poblacional/source)
+cd source
+g++ -std=c++17 brkga.cpp brkga_class.cpp utils/GraphReader.cpp -o brkga
+
+# Compilación con optimización
+g++ -std=c++17 -O3 brkga.cpp brkga_class.cpp utils/GraphReader.cpp -o brkga
+
+# Compilación con depuración
+g++ -std=c++17 -g -Wall brkga.cpp brkga_class.cpp utils/GraphReader.cpp -o brkga
+
+# Limpiar binarios
+rm -f brkga
+
+=================================================================================
+2. TESTS BÁSICOS
+=================================================================================
+
+# Test rápido con grafo pequeño (5 segundos)
+./brkga -i small_graph.graph -t 5 -p 50 -pe 0.15 -pm 0.15 -rhoe 0.70 -seed 42
+
+# Test medio con grafo pequeño (30 segundos)
+./brkga -i small_graph.graph -t 30 -p 100 -pe 0.20 -pm 0.15 -rhoe 0.75 -seed 42
+
+# Test largo con grafo pequeño (60 segundos)
+./brkga -i small_graph.graph -t 60 -p 150 -pe 0.20 -pm 0.15 -rhoe 0.75 -seed 42
+
+=================================================================================
+3. GRAFOS n=1000 (Erdős-Rényi)
+=================================================================================
+
+# Parámetros estándar: t=60, p=200, pe=0.20, pm=0.15, rhoe=0.75, seed=42
+
+# Grafos dispersos (p=0.05)
+./brkga -i ../../dataset_grafos_no_dirigidos/new_1000_dataset/erdos_n1000_p0c0.05_1.graph -t 60 -p 200 -pe 0.20 -pm 0.15 -rhoe 0.75 -seed 42
+./brkga -i ../../dataset_grafos_no_dirigidos/new_1000_dataset/erdos_n1000_p0c0.05_2.graph -t 60 -p 200 -pe 0.20 -pm 0.15 -rhoe 0.75 -seed 42
+./brkga -i ../../dataset_grafos_no_dirigidos/new_1000_dataset/erdos_n1000_p0c0.05_3.graph -t 60 -p 200 -pe 0.20 -pm 0.15 -rhoe 0.75 -seed 42
+
+# Grafos medios (p=0.1)
+./brkga -i ../../dataset_grafos_no_dirigidos/new_1000_dataset/erdos_n1000_p0c0.1_1.graph -t 60 -p 200 -pe 0.20 -pm 0.15 -rhoe 0.75 -seed 42
+./brkga -i ../../dataset_grafos_no_dirigidos/new_1000_dataset/erdos_n1000_p0c0.1_2.graph -t 60 -p 200 -pe 0.20 -pm 0.15 -rhoe 0.75 -seed 42
+./brkga -i ../../dataset_grafos_no_dirigidos/new_1000_dataset/erdos_n1000_p0c0.1_3.graph -t 60 -p 200 -pe 0.20 -pm 0.15 -rhoe 0.75 -seed 42
+
+# Test rápido n=1000 (para verificación)
+./brkga -i ../../dataset_grafos_no_dirigidos/new_1000_dataset/erdos_n1000_p0c0.1_1.graph -t 10 -p 100 -pe 0.15 -pm 0.15 -rhoe 0.70 -seed 42
+
+=================================================================================
+4. GRAFOS n=2000 (Erdős-Rényi)
+=================================================================================
+
+# Parámetros estándar: t=120, p=300, pe=0.20, pm=0.15, rhoe=0.75, seed=42
+# Ejemplos (cambia el número de instancia según necesites)
+
+./brkga -i ../../dataset_grafos_no_dirigidos/new_2000_dataset/erdos_n2000_p0c0.05_1.graph -t 120 -p 300 -pe 0.20 -pm 0.15 -rhoe 0.75 -seed 42
+./brkga -i ../../dataset_grafos_no_dirigidos/new_2000_dataset/erdos_n2000_p0c0.1_1.graph -t 120 -p 300 -pe 0.20 -pm 0.15 -rhoe 0.75 -seed 42
+
+=================================================================================
+5. GRAFOS n=3000 (Erdős-Rényi)
+=================================================================================
+
+# Parámetros estándar: t=180, p=400, pe=0.20, pm=0.15, rhoe=0.75, seed=42
+# Ejemplos (cambia el número de instancia según necesites)
+
+./brkga -i ../../dataset_grafos_no_dirigidos/new_3000_dataset/erdos_n3000_p0c0.05_1.graph -t 180 -p 400 -pe 0.20 -pm 0.15 -rhoe 0.75 -seed 42
+./brkga -i ../../dataset_grafos_no_dirigidos/new_3000_dataset/erdos_n3000_p0c0.1_1.graph -t 180 -p 400 -pe 0.20 -pm 0.15 -rhoe 0.75 -seed 42
+
+=================================================================================
+6. TUNING DE PARÁMETROS (n=1000, grafo de referencia)
+=================================================================================
+
+GRAFO_REF="../../dataset_grafos_no_dirigidos/new_1000_dataset/erdos_n1000_p0c0.1_1.graph"
+
+# 6.1 Tamaño de población (-p)
+./brkga -i $GRAFO_REF -t 60 -p 50 -pe 0.20 -pm 0.15 -rhoe 0.75 -seed 42
+./brkga -i $GRAFO_REF -t 60 -p 100 -pe 0.20 -pm 0.15 -rhoe 0.75 -seed 42
+./brkga -i $GRAFO_REF -t 60 -p 200 -pe 0.20 -pm 0.15 -rhoe 0.75 -seed 42  # Recomendado
+./brkga -i $GRAFO_REF -t 60 -p 300 -pe 0.20 -pm 0.15 -rhoe 0.75 -seed 42
+./brkga -i $GRAFO_REF -t 60 -p 500 -pe 0.20 -pm 0.15 -rhoe 0.75 -seed 42
+
+# 6.2 Proporción de elite (-pe)
+./brkga -i $GRAFO_REF -t 60 -p 200 -pe 0.10 -pm 0.15 -rhoe 0.75 -seed 42
+./brkga -i $GRAFO_REF -t 60 -p 200 -pe 0.15 -pm 0.15 -rhoe 0.75 -seed 42
+./brkga -i $GRAFO_REF -t 60 -p 200 -pe 0.20 -pm 0.15 -rhoe 0.75 -seed 42  # Recomendado
+./brkga -i $GRAFO_REF -t 60 -p 200 -pe 0.25 -pm 0.15 -rhoe 0.75 -seed 42
+
+# 6.3 Proporción de mutantes (-pm)
+./brkga -i $GRAFO_REF -t 60 -p 200 -pe 0.20 -pm 0.10 -rhoe 0.75 -seed 42
+./brkga -i $GRAFO_REF -t 60 -p 200 -pe 0.20 -pm 0.15 -rhoe 0.75 -seed 42  # Recomendado
+./brkga -i $GRAFO_REF -t 60 -p 200 -pe 0.20 -pm 0.20 -rhoe 0.75 -seed 42
+./brkga -i $GRAFO_REF -t 60 -p 200 -pe 0.20 -pm 0.25 -rhoe 0.75 -seed 42
+
+# 6.4 Probabilidad de herencia elite (-rhoe)
+./brkga -i $GRAFO_REF -t 60 -p 200 -pe 0.20 -pm 0.15 -rhoe 0.60 -seed 42
+./brkga -i $GRAFO_REF -t 60 -p 200 -pe 0.20 -pm 0.15 -rhoe 0.70 -seed 42
+./brkga -i $GRAFO_REF -t 60 -p 200 -pe 0.20 -pm 0.15 -rhoe 0.75 -seed 42  # Recomendado
+./brkga -i $GRAFO_REF -t 60 -p 200 -pe 0.20 -pm 0.15 -rhoe 0.80 -seed 42
+
+# 6.5 Diferentes semillas (para evaluar estabilidad)
+./brkga -i $GRAFO_REF -t 60 -p 200 -pe 0.20 -pm 0.15 -rhoe 0.75 -seed 1
+./brkga -i $GRAFO_REF -t 60 -p 200 -pe 0.20 -pm 0.15 -rhoe 0.75 -seed 42
+./brkga -i $GRAFO_REF -t 60 -p 200 -pe 0.20 -pm 0.15 -rhoe 0.75 -seed 123
+./brkga -i $GRAFO_REF -t 60 -p 200 -pe 0.20 -pm 0.15 -rhoe 0.75 -seed 999
+
+=================================================================================
+7. EXPERIMENTACIÓN BATCH (Ejecutar múltiples instancias)
+=================================================================================
+
+# Ejecutar todas las instancias n=1000 con p=0.05 y guardar resultados
+for i in {1..30}; do
+    echo "Ejecutando instancia $i..."
+    ./brkga -i ../../dataset_grafos_no_dirigidos/new_1000_dataset/erdos_n1000_p0c0.05_${i}.graph \
+            -t 60 -p 200 -pe 0.20 -pm 0.15 -rhoe 0.75 -seed 42 \
+            >> resultados_n1000_p005.txt
+done
+
+# Ejecutar todas las instancias n=1000 con p=0.1 y guardar resultados
+for i in {1..30}; do
+    echo "Ejecutando instancia $i..."
+    ./brkga -i ../../dataset_grafos_no_dirigidos/new_1000_dataset/erdos_n1000_p0c0.1_${i}.graph \
+            -t 60 -p 200 -pe 0.20 -pm 0.15 -rhoe 0.75 -seed 42 \
+            >> resultados_n1000_p01.txt
+done
+
+# Ejecutar con diferentes semillas para la misma instancia
+for seed in {1..10}; do
+    echo "Ejecutando con seed $seed..."
+    ./brkga -i ../../dataset_grafos_no_dirigidos/new_1000_dataset/erdos_n1000_p0c0.1_1.graph \
+            -t 60 -p 200 -pe 0.20 -pm 0.15 -rhoe 0.75 -seed $seed \
+            >> resultados_seeds.txt
+done
+
+=================================================================================
+8. ANÁLISIS DE RESULTADOS
+=================================================================================
+
+# Redirigir salida a archivo
+./brkga -i small_graph.graph -t 30 -p 100 -pe 0.20 -pm 0.15 -rhoe 0.75 -seed 42 > resultado.txt
+
+# Capturar solo el tamaño del conjunto
+./brkga -i small_graph.graph -t 30 -p 100 -pe 0.20 -pm 0.15 -rhoe 0.75 -seed 42 | tail -n 1
+
+# Ejecutar múltiples veces con diferentes semillas y comparar
+for seed in {1..5}; do
+    echo "Ejecución con seed $seed:"
+    ./brkga -i small_graph.graph -t 30 -p 100 -pe 0.20 -pm 0.15 -rhoe 0.75 -seed $seed | tail -n 1
+done
+
+=================================================================================
+9. VALIDACIÓN Y DEBUGGING
+=================================================================================
+
+# Ejecutar con tiempo muy corto para debug
+./brkga -i small_graph.graph -t 1 -p 20 -pe 0.20 -pm 0.15 -rhoe 0.75 -seed 1
+
+# Verificar que el ejecutable existe
+ls -lh brkga
+
+# Verificar que el grafo existe
+ls -lh small_graph.graph
+ls -lh ../../dataset_grafos_no_dirigidos/new_1000_dataset/erdos_n1000_p0c0.1_1.graph
+
+# Ver el formato del grafo
+head -n 10 small_graph.graph
+
+=================================================================================
+10. TIPS Y RECOMENDACIONES
+=================================================================================
+
+CONFIGURACIONES RECOMENDADAS POR TAMAÑO:
+
+n=1000:  -t 60  -p 200 -pe 0.20 -pm 0.15 -rhoe 0.75
+n=2000:  -t 120 -p 300 -pe 0.20 -pm 0.15 -rhoe 0.75
+n=3000:  -t 180 -p 400 -pe 0.20 -pm 0.15 -rhoe 0.75
+
+AJUSTES PARA DIFERENTES ESCENARIOS:
+
+- Grafos muy dispersos: Aumentar -pe (más explotación)
+- Grafos muy densos: Aumentar -pm y -p (más exploración)
+- Poco tiempo disponible: Reducir -p, mantener -pe alto
+- Mucho tiempo disponible: Aumentar -p y -t
+- No mejora el fitness: Aumentar -pm, reducir -rhoe
+- Converge muy rápido: Aumentar -pm, aumentar -p
+
+=================================================================================
