@@ -1,11 +1,8 @@
 #!/usr/bin/env python3
 """
-Script para ejecutar BRKGA con parámetros OPTIMIZADOS en SERVIDOR.
+Script para ejecutar BRKGA en SERVIDOR con parámetros OPTIMIZADOS.
+Compatible con Python 3.6+
 Parámetros: -p 264 -pe 0.14 -pm 0.25 -rhoe 0.65
-
-RUTAS ABSOLUTAS PARA SERVIDOR:
-- Dataset: /home/shared/sisadapt2/misp_project/dataset_grafos_no_dirigidos/
-- Ejecutable: /home/shared/sisadapt2/misp_project/MISP-project/metaheuristica_poblacional/source/brkga
 """
 
 import subprocess
@@ -15,7 +12,7 @@ import statistics
 import time
 from datetime import datetime
 
-# ===== CONFIGURACIÓN SERVIDOR =====
+# ==================== CONFIGURACIÓN SERVIDOR ====================
 BIN = "/home/shared/sisadapt2/misp_project/MISP-project/metaheuristica_poblacional/source/brkga"
 DATASET_BASE = "/home/shared/sisadapt2/misp_project/dataset_grafos_no_dirigidos"
 OUTPUT_BASE = "/home/shared/sisadapt2/misp_project/MISP-project/metaheuristica_poblacional/testing"
@@ -31,9 +28,19 @@ SEED = 42
 # Dataset
 SIZES = ["1000", "2000", "3000"]
 DENSITIES = ["0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9"]
-INSTANCES = [str(i) for i in range(1, 31)]  # 30 instancias por densidad
+INSTANCES = [str(i) for i in range(1, 31)]
 
 def main():
+    # Verificaciones iniciales
+    if not os.path.exists(BIN):
+        print(f"❌ ERROR: Ejecutable no encontrado: {BIN}")
+        print(f"   Compila primero con: cd {os.path.dirname(BIN)} && make")
+        return 1
+    
+    if not os.path.exists(DATASET_BASE):
+        print(f"❌ ERROR: Dataset no encontrado: {DATASET_BASE}")
+        return 1
+    
     print("=" * 80)
     print("EJECUCIÓN BRKGA EN SERVIDOR - PARÁMETROS OPTIMIZADOS")
     print("=" * 80)
@@ -43,24 +50,13 @@ def main():
     print(f"  - Salida: {OUTPUT_BASE}")
     print(f"\nParámetros del tuning:")
     print(f"  - Población: {POBLACION}")
-    print(f"  - Elite: {ELITE * 100:.0f}%")
-    print(f"  - Mutantes: {MUTANTES * 100:.0f}%")
-    print(f"  - Herencia (rhoe): {HERENCIA * 100:.0f}%")
+    print(f"  - Elite: {int(ELITE * 100)}%")
+    print(f"  - Mutantes: {int(MUTANTES * 100)}%")
+    print(f"  - Herencia (rhoe): {int(HERENCIA * 100)}%")
     print(f"  - Tiempo: {TIEMPO}s")
     print(f"  - Seed: {SEED}")
     print("=" * 80)
     print()
-    
-    # Verificar que el ejecutable existe
-    if not os.path.exists(BIN):
-        print(f"❌ ERROR: Ejecutable no encontrado en {BIN}")
-        print("   Asegúrate de que el BRKGA esté compilado en el servidor.")
-        return
-    
-    # Verificar que el dataset existe
-    if not os.path.exists(DATASET_BASE):
-        print(f"❌ ERROR: Dataset no encontrado en {DATASET_BASE}")
-        return
     
     start_time = time.time()
     
@@ -69,29 +65,22 @@ def main():
         print(f"PROCESANDO GRAFOS DE TAMAÑO {size}")
         print(f"{'='*80}")
         
-        dataset_path = f"{DATASET_BASE}/new_{size}_dataset"
-        
-        # Verificar que existe el dataset de este tamaño
-        if not os.path.exists(dataset_path):
-            print(f"⚠️  Dataset {dataset_path} no encontrado, se omite este tamaño.")
-            continue
-        
         OUTPUT = f"{OUTPUT_BASE}/results{size}_brkga_optimized.csv"
         rows = []
         
         total_instances = len(DENSITIES) * len(INSTANCES)
-        current_instance = 0
+        counter = 0
         
         for d in DENSITIES:
             density_values = []
             density_start = time.time()
             
             for j in INSTANCES:
-                current_instance += 1
-                fname = f"{dataset_path}/erdos_n{size}_p0c{d}_{j}.graph"
+                counter += 1
+                fname = f"{DATASET_BASE}/new_{size}_dataset/erdos_n{size}_p0c{d}_{j}.graph"
                 
                 if not os.path.exists(fname):
-                    print(f"  ⚠️  [{current_instance}/{total_instances}] {fname} no encontrado")
+                    print(f"  ⚠️  [{counter}/{total_instances}] {fname} no encontrado")
                     continue
 
                 try:
@@ -106,26 +95,35 @@ def main():
                         "-seed", str(SEED)
                     ]
                     
-                    result = subprocess.run(cmd, capture_output=True, text=True, 
-                                          check=True, timeout=TIEMPO + 15)
+                    # Compatible con Python 3.6+
+                    result = subprocess.run(
+                        cmd, 
+                        stdout=subprocess.PIPE, 
+                        stderr=subprocess.PIPE,
+                        universal_newlines=True,
+                        timeout=TIEMPO + 15
+                    )
+                    
+                    if result.returncode != 0:
+                        print(f"  ❌ [{counter}/{total_instances}] Error en d={d}, inst={j}")
+                        if result.stderr:
+                            print(f"     Error: {result.stderr.strip()[:100]}")
+                        continue
+                    
                     out = result.stdout.strip().splitlines()
 
                     if len(out) >= 1:
                         valor = abs(int(out[0]))
-                        density_values.append(valor)
                         rows.append([d, j, valor])
-                        print(f"  ✓ [{current_instance}/{total_instances}] Densidad {d}, Inst {j}: {valor}")
+                        density_values.append(valor)
+                        print(f"  ✅ [{counter}/{total_instances}] d={d}, inst={j}: {valor}")
                     else:
-                        print(f"  ⚠️  [{current_instance}/{total_instances}] Sin salida para instancia {j}")
+                        print(f"  ⚠️  [{counter}/{total_instances}] Salida vacía para d={d}, inst={j}")
 
                 except subprocess.TimeoutExpired:
-                    print(f"  ⏱️  [{current_instance}/{total_instances}] Timeout en instancia {j}")
-                except subprocess.CalledProcessError as e:
-                    print(f"  ❌ [{current_instance}/{total_instances}] Error en instancia {j}: {e}")
-                    if e.stderr:
-                        print(f"     stderr: {e.stderr[:200]}")
+                    print(f"  ⏱️  [{counter}/{total_instances}] Timeout en d={d}, inst={j}")
                 except Exception as e:
-                    print(f"  ❌ [{current_instance}/{total_instances}] Error inesperado en instancia {j}: {e}")
+                    print(f"  ❌ [{counter}/{total_instances}] Error en d={d}, inst={j}: {e}")
             
             # Estadísticas por densidad
             if density_values:
@@ -137,7 +135,7 @@ def main():
                 
                 print(f"\n  📊 Densidad {d} completada en {density_time:.1f}s:")
                 print(f"     Media: {media:.2f}, Desv: {desv:.2f}, Min: {minimo}, Max: {maximo}")
-                print(f"     Instancias: {len(density_values)}/{len(INSTANCES)}")
+                print(f"     Instancias: {len(density_values)}/30")
         
         # Guardar resultados individuales (asegurar carpeta)
         os.makedirs(os.path.dirname(OUTPUT), exist_ok=True)
@@ -147,6 +145,7 @@ def main():
             writer.writerows(rows)
 
         print(f"\n  ✅ Resultados individuales guardados en: {OUTPUT}")
+        print(f"     Total de resultados: {len(rows)}/{total_instances}")
 
         # Generar archivo summary con estadísticas por densidad
         SUMMARY_OUTPUT = OUTPUT.replace(".csv", "_summary.csv")
@@ -179,6 +178,8 @@ def main():
     print(f"Tiempo total: {total_time/60:.2f} minutos ({total_time:.1f}s)")
     print(f"Timestamp: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print(f"{'='*80}")
+    
+    return 0
 
 if __name__ == "__main__":
-    main()
+    exit(main())
