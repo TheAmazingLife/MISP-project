@@ -1,0 +1,48 @@
+#!/bin/bash
+# target-runner-slurm para Cluster Luthier
+
+error() {
+    echo "TZ=UTC date: $0: error: $@"
+    exit 1
+}
+
+# 1. Captura de parámetros enviados por irace
+CANDIDATE=$1
+INSTANCEID=$2
+SEED=$3
+INSTANCE=$4
+shift 4 || error "Faltan parámetros de irace"
+CAND_PARAMS=$*
+
+# 2. Configuración de rutas y archivos
+EXE="/home/shared/sisadapt2/tuning/brkga_hibrid"
+STDOUT=c${CANDIDATE}-${INSTANCEID}-${SEED}.stdout
+STDERR=c${CANDIDATE}-${INSTANCEID}-${SEED}.stderr
+tmpfile=$(mktemp)
+
+# 3. Envío del trabajo a Slurm usando sbatch
+# Se eliminó la línea de --time para que no tenga límite de 5 minutos
+sbatch 1> $tmpfile <<EOF
+#!/bin/bash
+#SBATCH --job-name=irace-c${CANDIDATE}-i${INSTANCEID}
+#SBATCH --output=${STDOUT}
+#SBATCH --error=${STDERR}
+#SBATCH --partition=main
+#SBATCH --mem=16G
+#SBATCH -n 1
+
+# Ejecución del programa en el nodo asignado
+srun ${EXE} -i ${INSTANCE} -t 10 -seed ${SEED} ${CAND_PARAMS}
+EOF
+
+# 4. Procesamiento del JOBID
+rc=$?
+if [[ $rc == 0 ]]; then
+    JOBID=$(grep -o -e "Submitted batch job [^ ]\+" $tmpfile | cut -f4 -d' ')
+    echo "$JOBID"
+    rm -f $tmpfile
+    exit 0
+else
+    error "$0: sbatch falló al enviar el trabajo"
+    exit 1
+fi

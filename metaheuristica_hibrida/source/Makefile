@@ -1,9 +1,21 @@
-# Makefile para BRKGA - MISP
+# Makefile para BRKGA - MISP con CPLEX Studio 2211
 # Compilador y flags
 CXX = g++
-# CXXFLAGS = -std=c++17 -O3 -Wall -Wextra
-CXXFLAGS = -std=c++17 -O3
-LDFLAGS = 
+
+# Directorios de CPLEX
+CPLEX_DIR = /home/shared/sisadapt2/CPLEX_Studio2211
+CPLEX_INC = $(CPLEX_DIR)/cplex/include
+CONCERT_INC = $(CPLEX_DIR)/concert/include
+CPLEX_LIB = $(CPLEX_DIR)/cplex/lib/x86-64_linux/static_pic
+CONCERT_LIB = $(CPLEX_DIR)/concert/lib/x86-64_linux/static_pic
+
+# Flags de compilación
+CXXFLAGS = -std=c++17 -O3 -fPIC -fexceptions -DIL_STD \
+           -I$(CPLEX_INC) -I$(CONCERT_INC)
+
+# Flags de linkeo (ORDEN IMPORTANTE)
+LDFLAGS = -L$(CPLEX_LIB) -L$(CONCERT_LIB) \
+          -lilocplex -lcplex -lconcert -lm -lpthread -ldl
 
 # Directorios
 SRC_DIR = .
@@ -11,7 +23,7 @@ UTILS_DIR = utils
 OBJ_DIR = obj
 
 # Archivos
-TARGET = brkga
+TARGET = brkga_hibrid
 SOURCES = brkga.cpp brkga_class.cpp $(UTILS_DIR)/GraphReader.cpp
 OBJECTS = $(OBJ_DIR)/brkga.o $(OBJ_DIR)/brkga_class.o $(OBJ_DIR)/GraphReader.o
 HEADERS = brkga_class.h $(UTILS_DIR)/GraphReader.h
@@ -48,15 +60,3 @@ rebuild: clean all
 
 # Reglas que no son archivos
 .PHONY: all clean rebuild
-
-# Información de ayuda
-help:
-	@echo "Makefile para BRKGA - MISP"
-	@echo ""
-	@echo "Uso:"
-	@echo "  make          - Compila el proyecto"
-	@echo "  make clean    - Elimina archivos compilados"
-	@echo "  make rebuild  - Recompila desde cero"
-	@echo "  make help     - Muestra esta ayuda"
-	@echo ""
-	@echo "Ejecutable generado: $(TARGET)"
