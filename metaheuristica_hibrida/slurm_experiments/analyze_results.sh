@@ -60,16 +60,21 @@ for stdout_file in "$RESULTS_DIR"/*.stdout; do
     job_id_content=$(grep "Job ID:" "$stdout_file" | awk '{print $3}')
     nodo=$(grep "Nodo:" "$stdout_file" | awk '{print $2}')
     
-    # Buscar el valor objetivo (puede variar según el formato de salida)
-    # Asumiendo que el programa imprime algo como "Best solution: 123" o "Objective: 123"
-    valor_objetivo=$(grep -iE "(Best|Objective|Solution|Valor objetivo)" "$stdout_file" | grep -oP '\d+' | tail -1)
+    # Buscar el valor objetivo - el programa imprime solo un número (puede ser negativo)
+    # Extraer la línea que contiene solo un número después de la línea de "Tiempo:"
+    valor_objetivo=$(awk '/Tiempo:/{getline; getline; if($0 ~ /^-?[0-9]+$/) print $0}' "$stdout_file")
     
-    # Buscar tiempo de ejecución
-    tiempo=$(grep -iE "(Time|Tiempo|Runtime)" "$stdout_file" | grep -oP '\d+(\.\d+)?' | tail -1)
+    # Si no se encontró, buscar cualquier línea con solo un número
+    if [ -z "$valor_objetivo" ]; then
+        valor_objetivo=$(grep -E '^-?[0-9]+$' "$stdout_file" | head -1)
+    fi
+    
+    # Buscar tiempo de ejecución (siempre es 10 segundos según configuración)
+    tiempo=10
     
     # Verificar si el experimento fue exitoso
     exit_code=$(grep "código:" "$stdout_file" | grep -oP '\d+' | tail -1)
-    if [ "$exit_code" == "0" ] || [ -n "$valor_objetivo" ]; then
+    if [ "$exit_code" == "0" ] && [ -n "$valor_objetivo" ]; then
         exito="SI"
         EXPERIMENTOS_EXITOSOS=$((EXPERIMENTOS_EXITOSOS + 1))
     else
@@ -106,8 +111,9 @@ for SIZE in 1000 2000 3000; do
     # Procesar para cada densidad
     for DENSITY in 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9; do
         # Extraer valores para esta combinación tamaño-densidad
-        VALUES=$(awk -F',' -v size="n${SIZE}" -v dens="${DENSITY}" '
-            NR>1 && $1 ~ size && $1 ~ ("p0c"dens"_") && $5 != "N/A" {
+        # Formato del nombre: erdos_n1000_p0c0.1_1
+        VALUES=$(awk -F',' -v size="${SIZE}" -v dens="${DENSITY}" '
+            NR>1 && $1 ~ ("n"size"_p0c"dens"_") && $5 != "N/A" {
                 print $5
             }' "$OUTPUT_CSV")
         
