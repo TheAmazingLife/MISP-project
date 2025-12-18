@@ -1,3 +1,13 @@
 # Ignorar la carpeta de datasets y archivos binarios
 /dataset_grafos_no_dirigidos/
 /a.out
+greedy/scripts/
+greedy/testing/
+metaheuristica/scripts
+metaheuristica/logs
+metaheuristica/testing
+metaheuristica/comandos.txt
+metaheuristica/media_calidad_vs_densidad.png
+metaheuristica/media_tiempo_vs_densidad.png
+
+metaheuristica_hibrida/slurm_experiments/*.sh
