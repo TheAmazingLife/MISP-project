@@ -1,0 +1,999 @@
+================================================================================
+EJECUCIÓN BRKGA CON PARÁMETROS OPTIMIZADOS
+================================================================================
+Parámetros del tuning:
+  - Población: 264
+  - Elite: 14%
+  - Mutantes: 25%
+  - Herencia (rhoe): 65%
+  - Tiempo: 10s
+  - Seed: 42
+================================================================================
+
+
+================================================================================
+PROCESANDO GRAFOS DE TAMAÑO 1000
+================================================================================
+  ✓ [1/270] Densidad 0.1, Inst 1: 62
+  ✓ [2/270] Densidad 0.1, Inst 2: 63
+  ✓ [3/270] Densidad 0.1, Inst 3: 61
+  ✓ [4/270] Densidad 0.1, Inst 4: 61
+  ✓ [5/270] Densidad 0.1, Inst 5: 63
+  ✓ [6/270] Densidad 0.1, Inst 6: 61
+  ✓ [7/270] Densidad 0.1, Inst 7: 61
+  ✓ [8/270] Densidad 0.1, Inst 8: 62
+  ✓ [9/270] Densidad 0.1, Inst 9: 58
+  ✓ [10/270] Densidad 0.1, Inst 10: 63
+  ✓ [11/270] Densidad 0.1, Inst 11: 61
+  ✓ [12/270] Densidad 0.1, Inst 12: 60
+  ✓ [13/270] Densidad 0.1, Inst 13: 60
+  ✓ [14/270] Densidad 0.1, Inst 14: 62
+  ✓ [15/270] Densidad 0.1, Inst 15: 59
+  ✓ [16/270] Densidad 0.1, Inst 16: 62
+  ✓ [17/270] Densidad 0.1, Inst 17: 61
+  ✓ [18/270] Densidad 0.1, Inst 18: 62
+  ✓ [19/270] Densidad 0.1, Inst 19: 62
+  ✓ [20/270] Densidad 0.1, Inst 20: 60
+  ✓ [21/270] Densidad 0.1, Inst 21: 60
+  ✓ [22/270] Densidad 0.1, Inst 22: 59
+  ✓ [23/270] Densidad 0.1, Inst 23: 61
+  ✓ [24/270] Densidad 0.1, Inst 24: 58
+  ✓ [25/270] Densidad 0.1, Inst 25: 62
+  ✓ [26/270] Densidad 0.1, Inst 26: 61
+  ✓ [27/270] Densidad 0.1, Inst 27: 61
+  ✓ [28/270] Densidad 0.1, Inst 28: 62
+  ✓ [29/270] Densidad 0.1, Inst 29: 62
+  ✓ [30/270] Densidad 0.1, Inst 30: 64
+
+  📊 Densidad 0.1 completada en 300.6s:
+     Media: 61.13, Desv: 1.43, Min: 58, Max: 64
+     Instancias: 30/30
+  ✓ [31/270] Densidad 0.2, Inst 1: 34
+  ✓ [32/270] Densidad 0.2, Inst 2: 34
+  ✓ [33/270] Densidad 0.2, Inst 3: 37
+  ✓ [34/270] Densidad 0.2, Inst 4: 34
+  ✓ [35/270] Densidad 0.2, Inst 5: 34
+  ✓ [36/270] Densidad 0.2, Inst 6: 35
+  ✓ [37/270] Densidad 0.2, Inst 7: 35
+  ✓ [38/270] Densidad 0.2, Inst 8: 34
+  ✓ [39/270] Densidad 0.2, Inst 9: 34
+  ✓ [40/270] Densidad 0.2, Inst 10: 33
+  ✓ [41/270] Densidad 0.2, Inst 11: 36
+  ✓ [42/270] Densidad 0.2, Inst 12: 33
+  ✓ [43/270] Densidad 0.2, Inst 13: 35
+  ✓ [44/270] Densidad 0.2, Inst 14: 34
+  ✓ [45/270] Densidad 0.2, Inst 15: 34
+  ✓ [46/270] Densidad 0.2, Inst 16: 33
+  ✓ [47/270] Densidad 0.2, Inst 17: 35
+  ✓ [48/270] Densidad 0.2, Inst 18: 36
+  ✓ [49/270] Densidad 0.2, Inst 19: 34
+  ✓ [50/270] Densidad 0.2, Inst 20: 35
+  ✓ [51/270] Densidad 0.2, Inst 21: 34
+  ✓ [52/270] Densidad 0.2, Inst 22: 34
+  ✓ [53/270] Densidad 0.2, Inst 23: 33
+  ✓ [54/270] Densidad 0.2, Inst 24: 34
+  ✓ [55/270] Densidad 0.2, Inst 25: 33
+  ✓ [56/270] Densidad 0.2, Inst 26: 33
+  ✓ [57/270] Densidad 0.2, Inst 27: 32
+  ✓ [58/270] Densidad 0.2, Inst 28: 34
+  ✓ [59/270] Densidad 0.2, Inst 29: 34
+  ✓ [60/270] Densidad 0.2, Inst 30: 35
+
+  📊 Densidad 0.2 completada en 300.8s:
+     Media: 34.17, Desv: 1.05, Min: 32, Max: 37
+     Instancias: 30/30
+  ✓ [61/270] Densidad 0.3, Inst 1: 23
+  ✓ [62/270] Densidad 0.3, Inst 2: 25
+  ✓ [63/270] Densidad 0.3, Inst 3: 24
+  ✓ [64/270] Densidad 0.3, Inst 4: 24
+  ✓ [65/270] Densidad 0.3, Inst 5: 23
+  ✓ [66/270] Densidad 0.3, Inst 6: 23
+  ✓ [67/270] Densidad 0.3, Inst 7: 23
+  ✓ [68/270] Densidad 0.3, Inst 8: 23
+  ✓ [69/270] Densidad 0.3, Inst 9: 24
+  ✓ [70/270] Densidad 0.3, Inst 10: 24
+  ✓ [71/270] Densidad 0.3, Inst 11: 23
+  ✓ [72/270] Densidad 0.3, Inst 12: 24
+  ✓ [73/270] Densidad 0.3, Inst 13: 23
+  ✓ [74/270] Densidad 0.3, Inst 14: 24
+  ✓ [75/270] Densidad 0.3, Inst 15: 23
+  ✓ [76/270] Densidad 0.3, Inst 16: 24
+  ✓ [77/270] Densidad 0.3, Inst 17: 25
+  ✓ [78/270] Densidad 0.3, Inst 18: 25
+  ✓ [79/270] Densidad 0.3, Inst 19: 25
+  ✓ [80/270] Densidad 0.3, Inst 20: 24
+  ✓ [81/270] Densidad 0.3, Inst 21: 24
+  ✓ [82/270] Densidad 0.3, Inst 22: 24
+  ✓ [83/270] Densidad 0.3, Inst 23: 23
+  ✓ [84/270] Densidad 0.3, Inst 24: 24
+  ✓ [85/270] Densidad 0.3, Inst 25: 24
+  ✓ [86/270] Densidad 0.3, Inst 26: 23
+  ✓ [87/270] Densidad 0.3, Inst 27: 23
+  ✓ [88/270] Densidad 0.3, Inst 28: 24
+  ✓ [89/270] Densidad 0.3, Inst 29: 24
+  ✓ [90/270] Densidad 0.3, Inst 30: 23
+
+  📊 Densidad 0.3 completada en 301.0s:
+     Media: 23.73, Desv: 0.69, Min: 23, Max: 25
+     Instancias: 30/30
+  ✓ [91/270] Densidad 0.4, Inst 1: 18
+  ✓ [92/270] Densidad 0.4, Inst 2: 18
+  ✓ [93/270] Densidad 0.4, Inst 3: 18
+  ✓ [94/270] Densidad 0.4, Inst 4: 18
+  ✓ [95/270] Densidad 0.4, Inst 5: 18
+  ✓ [96/270] Densidad 0.4, Inst 6: 18
+  ✓ [97/270] Densidad 0.4, Inst 7: 19
+  ✓ [98/270] Densidad 0.4, Inst 8: 18
+  ✓ [99/270] Densidad 0.4, Inst 9: 19
+  ✓ [100/270] Densidad 0.4, Inst 10: 18
+  ✓ [101/270] Densidad 0.4, Inst 11: 18
+  ✓ [102/270] Densidad 0.4, Inst 12: 18
+  ✓ [103/270] Densidad 0.4, Inst 13: 19
+  ✓ [104/270] Densidad 0.4, Inst 14: 18
+  ✓ [105/270] Densidad 0.4, Inst 15: 18
+  ✓ [106/270] Densidad 0.4, Inst 16: 18
+  ✓ [107/270] Densidad 0.4, Inst 17: 19
+  ✓ [108/270] Densidad 0.4, Inst 18: 19
+  ✓ [109/270] Densidad 0.4, Inst 19: 18
+  ✓ [110/270] Densidad 0.4, Inst 20: 19
+  ✓ [111/270] Densidad 0.4, Inst 21: 18
+  ✓ [112/270] Densidad 0.4, Inst 22: 18
+  ✓ [113/270] Densidad 0.4, Inst 23: 18
+  ✓ [114/270] Densidad 0.4, Inst 24: 18
+  ✓ [115/270] Densidad 0.4, Inst 25: 18
+  ✓ [116/270] Densidad 0.4, Inst 26: 19
+  ✓ [117/270] Densidad 0.4, Inst 27: 19
+  ✓ [118/270] Densidad 0.4, Inst 28: 19
+  ✓ [119/270] Densidad 0.4, Inst 29: 18
+  ✓ [120/270] Densidad 0.4, Inst 30: 18
+
+  📊 Densidad 0.4 completada en 301.1s:
+     Media: 18.30, Desv: 0.47, Min: 18, Max: 19
+     Instancias: 30/30
+  ✓ [121/270] Densidad 0.5, Inst 1: 15
+  ✓ [122/270] Densidad 0.5, Inst 2: 14
+  ✓ [123/270] Densidad 0.5, Inst 3: 14
+  ✓ [124/270] Densidad 0.5, Inst 4: 15
+  ✓ [125/270] Densidad 0.5, Inst 5: 15
+  ✓ [126/270] Densidad 0.5, Inst 6: 14
+  ✓ [127/270] Densidad 0.5, Inst 7: 15
+  ✓ [128/270] Densidad 0.5, Inst 8: 15
+  ✓ [129/270] Densidad 0.5, Inst 9: 15
+  ✓ [130/270] Densidad 0.5, Inst 10: 15
+  ✓ [131/270] Densidad 0.5, Inst 11: 15
+  ✓ [132/270] Densidad 0.5, Inst 12: 15
+  ✓ [133/270] Densidad 0.5, Inst 13: 15
+  ✓ [134/270] Densidad 0.5, Inst 14: 15
+  ✓ [135/270] Densidad 0.5, Inst 15: 15
+  ✓ [136/270] Densidad 0.5, Inst 16: 15
+  ✓ [137/270] Densidad 0.5, Inst 17: 15
+  ✓ [138/270] Densidad 0.5, Inst 18: 15
+  ✓ [139/270] Densidad 0.5, Inst 19: 15
+  ✓ [140/270] Densidad 0.5, Inst 20: 15
+  ✓ [141/270] Densidad 0.5, Inst 21: 15
+  ✓ [142/270] Densidad 0.5, Inst 22: 15
+  ✓ [143/270] Densidad 0.5, Inst 23: 15
+  ✓ [144/270] Densidad 0.5, Inst 24: 15
+  ✓ [145/270] Densidad 0.5, Inst 25: 14
+  ✓ [146/270] Densidad 0.5, Inst 26: 15
+  ✓ [147/270] Densidad 0.5, Inst 27: 14
+  ✓ [148/270] Densidad 0.5, Inst 28: 15
+  ✓ [149/270] Densidad 0.5, Inst 29: 15
+  ✓ [150/270] Densidad 0.5, Inst 30: 15
+
+  📊 Densidad 0.5 completada en 301.7s:
+     Media: 14.83, Desv: 0.38, Min: 14, Max: 15
+     Instancias: 30/30
+  ✓ [151/270] Densidad 0.6, Inst 1: 12
+  ✓ [152/270] Densidad 0.6, Inst 2: 12
+  ✓ [153/270] Densidad 0.6, Inst 3: 12
+  ✓ [154/270] Densidad 0.6, Inst 4: 13
+  ✓ [155/270] Densidad 0.6, Inst 5: 12
+  ✓ [156/270] Densidad 0.6, Inst 6: 12
+  ✓ [157/270] Densidad 0.6, Inst 7: 12
+  ✓ [158/270] Densidad 0.6, Inst 8: 12
+  ✓ [159/270] Densidad 0.6, Inst 9: 12
+  ✓ [160/270] Densidad 0.6, Inst 10: 12
+  ✓ [161/270] Densidad 0.6, Inst 11: 12
+  ✓ [162/270] Densidad 0.6, Inst 12: 12
+  ✓ [163/270] Densidad 0.6, Inst 13: 12
+  ✓ [164/270] Densidad 0.6, Inst 14: 13
+  ✓ [165/270] Densidad 0.6, Inst 15: 12
+  ✓ [166/270] Densidad 0.6, Inst 16: 13
+  ✓ [167/270] Densidad 0.6, Inst 17: 12
+  ✓ [168/270] Densidad 0.6, Inst 18: 12
+  ✓ [169/270] Densidad 0.6, Inst 19: 13
+  ✓ [170/270] Densidad 0.6, Inst 20: 12
+  ✓ [171/270] Densidad 0.6, Inst 21: 12
+  ✓ [172/270] Densidad 0.6, Inst 22: 12
+  ✓ [173/270] Densidad 0.6, Inst 23: 12
+  ✓ [174/270] Densidad 0.6, Inst 24: 12
+  ✓ [175/270] Densidad 0.6, Inst 25: 12
+  ✓ [176/270] Densidad 0.6, Inst 26: 12
+  ✓ [177/270] Densidad 0.6, Inst 27: 12
+  ✓ [178/270] Densidad 0.6, Inst 28: 12
+  ✓ [179/270] Densidad 0.6, Inst 29: 12
+  ✓ [180/270] Densidad 0.6, Inst 30: 12
+
+  📊 Densidad 0.6 completada en 301.8s:
+     Media: 12.13, Desv: 0.35, Min: 12, Max: 13
+     Instancias: 30/30
+  ✓ [181/270] Densidad 0.7, Inst 1: 10
+  ✓ [182/270] Densidad 0.7, Inst 2: 10
+  ✓ [183/270] Densidad 0.7, Inst 3: 10
+  ✓ [184/270] Densidad 0.7, Inst 4: 10
+  ✓ [185/270] Densidad 0.7, Inst 5: 10
+  ✓ [186/270] Densidad 0.7, Inst 6: 10
+  ✓ [187/270] Densidad 0.7, Inst 7: 10
+  ✓ [188/270] Densidad 0.7, Inst 8: 10
+  ✓ [189/270] Densidad 0.7, Inst 9: 10
+  ✓ [190/270] Densidad 0.7, Inst 10: 10
+  ✓ [191/270] Densidad 0.7, Inst 11: 10
+  ✓ [192/270] Densidad 0.7, Inst 12: 10
+  ✓ [193/270] Densidad 0.7, Inst 13: 10
+  ✓ [194/270] Densidad 0.7, Inst 14: 10
+  ✓ [195/270] Densidad 0.7, Inst 15: 10
+  ✓ [196/270] Densidad 0.7, Inst 16: 10
+  ✓ [197/270] Densidad 0.7, Inst 17: 10
+  ✓ [198/270] Densidad 0.7, Inst 18: 10
+  ✓ [199/270] Densidad 0.7, Inst 19: 10
+  ✓ [200/270] Densidad 0.7, Inst 20: 10
+  ✓ [201/270] Densidad 0.7, Inst 21: 10
+  ✓ [202/270] Densidad 0.7, Inst 22: 10
+  ✓ [203/270] Densidad 0.7, Inst 23: 10
+  ✓ [204/270] Densidad 0.7, Inst 24: 10
+  ✓ [205/270] Densidad 0.7, Inst 25: 10
+  ✓ [206/270] Densidad 0.7, Inst 26: 10
+  ✓ [207/270] Densidad 0.7, Inst 27: 10
+  ✓ [208/270] Densidad 0.7, Inst 28: 10
+  ✓ [209/270] Densidad 0.7, Inst 29: 10
+  ✓ [210/270] Densidad 0.7, Inst 30: 10
+
+  📊 Densidad 0.7 completada en 302.0s:
+     Media: 10.00, Desv: 0.00, Min: 10, Max: 10
+     Instancias: 30/30
+  ✓ [211/270] Densidad 0.8, Inst 1: 8
+  ✓ [212/270] Densidad 0.8, Inst 2: 9
+  ✓ [213/270] Densidad 0.8, Inst 3: 9
+  ✓ [214/270] Densidad 0.8, Inst 4: 8
+  ✓ [215/270] Densidad 0.8, Inst 5: 8
+  ✓ [216/270] Densidad 0.8, Inst 6: 8
+  ✓ [217/270] Densidad 0.8, Inst 7: 8
+  ✓ [218/270] Densidad 0.8, Inst 8: 9
+  ✓ [219/270] Densidad 0.8, Inst 9: 8
+  ✓ [220/270] Densidad 0.8, Inst 10: 9
+  ✓ [221/270] Densidad 0.8, Inst 11: 8
+  ✓ [222/270] Densidad 0.8, Inst 12: 8
+  ✓ [223/270] Densidad 0.8, Inst 13: 8
+  ✓ [224/270] Densidad 0.8, Inst 14: 8
+  ✓ [225/270] Densidad 0.8, Inst 15: 8
+  ✓ [226/270] Densidad 0.8, Inst 16: 9
+  ✓ [227/270] Densidad 0.8, Inst 17: 8
+  ✓ [228/270] Densidad 0.8, Inst 18: 9
+  ✓ [229/270] Densidad 0.8, Inst 19: 9
+  ✓ [230/270] Densidad 0.8, Inst 20: 8
+  ✓ [231/270] Densidad 0.8, Inst 21: 8
+  ✓ [232/270] Densidad 0.8, Inst 22: 8
+  ✓ [233/270] Densidad 0.8, Inst 23: 8
+  ✓ [234/270] Densidad 0.8, Inst 24: 8
+  ✓ [235/270] Densidad 0.8, Inst 25: 8
+  ✓ [236/270] Densidad 0.8, Inst 26: 8
+  ✓ [237/270] Densidad 0.8, Inst 27: 9
+  ✓ [238/270] Densidad 0.8, Inst 28: 9
+  ✓ [239/270] Densidad 0.8, Inst 29: 8
+  ✓ [240/270] Densidad 0.8, Inst 30: 9
+
+  📊 Densidad 0.8 completada en 302.3s:
+     Media: 8.33, Desv: 0.48, Min: 8, Max: 9
+     Instancias: 30/30
+  ✓ [241/270] Densidad 0.9, Inst 1: 6
+  ✓ [242/270] Densidad 0.9, Inst 2: 7
+  ✓ [243/270] Densidad 0.9, Inst 3: 7
+  ✓ [244/270] Densidad 0.9, Inst 4: 7
+  ✓ [245/270] Densidad 0.9, Inst 5: 6
+  ✓ [246/270] Densidad 0.9, Inst 6: 7
+  ✓ [247/270] Densidad 0.9, Inst 7: 7
+  ✓ [248/270] Densidad 0.9, Inst 8: 7
+  ✓ [249/270] Densidad 0.9, Inst 9: 6
+  ✓ [250/270] Densidad 0.9, Inst 10: 7
+  ✓ [251/270] Densidad 0.9, Inst 11: 7
+  ✓ [252/270] Densidad 0.9, Inst 12: 7
+  ✓ [253/270] Densidad 0.9, Inst 13: 7
+  ✓ [254/270] Densidad 0.9, Inst 14: 6
+  ✓ [255/270] Densidad 0.9, Inst 15: 6
+  ✓ [256/270] Densidad 0.9, Inst 16: 7
+  ✓ [257/270] Densidad 0.9, Inst 17: 7
+  ✓ [258/270] Densidad 0.9, Inst 18: 7
+  ✓ [259/270] Densidad 0.9, Inst 19: 7
+  ✓ [260/270] Densidad 0.9, Inst 20: 7
+  ✓ [261/270] Densidad 0.9, Inst 21: 7
+  ✓ [262/270] Densidad 0.9, Inst 22: 7
+  ✓ [263/270] Densidad 0.9, Inst 23: 7
+  ✓ [264/270] Densidad 0.9, Inst 24: 7
+  ✓ [265/270] Densidad 0.9, Inst 25: 6
+  ✓ [266/270] Densidad 0.9, Inst 26: 6
+  ✓ [267/270] Densidad 0.9, Inst 27: 7
+  ✓ [268/270] Densidad 0.9, Inst 28: 7
+  ✓ [269/270] Densidad 0.9, Inst 29: 7
+  ✓ [270/270] Densidad 0.9, Inst 30: 7
+
+  📊 Densidad 0.9 completada en 302.4s:
+     Media: 6.77, Desv: 0.43, Min: 6, Max: 7
+     Instancias: 30/30
+
+  ✅ Resultados individuales guardados en: metaheuristica_poblacional/testing/results1000_brkga_optimized.csv
+
+  📈 RESUMEN TAMAÑO 1000:
+  Densidad     Media        Desv.Est     N       
+  --------------------------------------------
+  0.1          61.13        1.43         30      
+  0.2          34.17        1.05         30      
+  0.3          23.73        0.69         30      
+  0.4          18.30        0.47         30      
+  0.5          14.83        0.38         30      
+  0.6          12.13        0.35         30      
+  0.7          10.00        0.00         30      
+  0.8          8.33         0.48         30      
+  0.9          6.77         0.43         30      
+
+  ✅ Resumen estadístico guardado en: metaheuristica_poblacional/testing/results1000_brkga_optimized_summary.csv
+
+================================================================================
+PROCESANDO GRAFOS DE TAMAÑO 2000
+================================================================================
+  ✓ [1/270] Densidad 0.1, Inst 1: 62
+  ✓ [2/270] Densidad 0.1, Inst 2: 67
+  ✓ [3/270] Densidad 0.1, Inst 3: 63
+  ✓ [4/270] Densidad 0.1, Inst 4: 62
+  ✓ [5/270] Densidad 0.1, Inst 5: 62
+  ✓ [6/270] Densidad 0.1, Inst 6: 62
+  ✓ [7/270] Densidad 0.1, Inst 7: 61
+  ✓ [8/270] Densidad 0.1, Inst 8: 67
+  ✓ [9/270] Densidad 0.1, Inst 9: 62
+  ✓ [10/270] Densidad 0.1, Inst 10: 65
+  ✓ [11/270] Densidad 0.1, Inst 11: 61
+  ✓ [12/270] Densidad 0.1, Inst 12: 61
+  ✓ [13/270] Densidad 0.1, Inst 13: 64
+  ✓ [14/270] Densidad 0.1, Inst 14: 62
+  ✓ [15/270] Densidad 0.1, Inst 15: 63
+  ✓ [16/270] Densidad 0.1, Inst 16: 62
+  ✓ [17/270] Densidad 0.1, Inst 17: 62
+  ✓ [18/270] Densidad 0.1, Inst 18: 63
+  ✓ [19/270] Densidad 0.1, Inst 19: 63
+  ✓ [20/270] Densidad 0.1, Inst 20: 66
+  ✓ [21/270] Densidad 0.1, Inst 21: 62
+  ✓ [22/270] Densidad 0.1, Inst 22: 62
+  ✓ [23/270] Densidad 0.1, Inst 23: 63
+  ✓ [24/270] Densidad 0.1, Inst 24: 62
+  ✓ [25/270] Densidad 0.1, Inst 25: 63
+  ✓ [26/270] Densidad 0.1, Inst 26: 61
+  ✓ [27/270] Densidad 0.1, Inst 27: 65
+  ✓ [28/270] Densidad 0.1, Inst 28: 62
+  ✓ [29/270] Densidad 0.1, Inst 29: 62
+  ✓ [30/270] Densidad 0.1, Inst 30: 61
+
+  📊 Densidad 0.1 completada en 302.1s:
+     Media: 62.77, Desv: 1.68, Min: 61, Max: 67
+     Instancias: 30/30
+  ✓ [31/270] Densidad 0.2, Inst 1: 37
+  ✓ [32/270] Densidad 0.2, Inst 2: 35
+  ✓ [33/270] Densidad 0.2, Inst 3: 36
+  ✓ [34/270] Densidad 0.2, Inst 4: 37
+  ✓ [35/270] Densidad 0.2, Inst 5: 35
+  ✓ [36/270] Densidad 0.2, Inst 6: 36
+  ✓ [37/270] Densidad 0.2, Inst 7: 36
+  ✓ [38/270] Densidad 0.2, Inst 8: 37
+  ✓ [39/270] Densidad 0.2, Inst 9: 37
+  ✓ [40/270] Densidad 0.2, Inst 10: 36
+  ✓ [41/270] Densidad 0.2, Inst 11: 37
+  ✓ [42/270] Densidad 0.2, Inst 12: 36
+  ✓ [43/270] Densidad 0.2, Inst 13: 35
+  ✓ [44/270] Densidad 0.2, Inst 14: 37
+  ✓ [45/270] Densidad 0.2, Inst 15: 36
+  ✓ [46/270] Densidad 0.2, Inst 16: 38
+  ✓ [47/270] Densidad 0.2, Inst 17: 36
+  ✓ [48/270] Densidad 0.2, Inst 18: 35
+  ✓ [49/270] Densidad 0.2, Inst 19: 37
+  ✓ [50/270] Densidad 0.2, Inst 20: 37
+  ✓ [51/270] Densidad 0.2, Inst 21: 36
+  ✓ [52/270] Densidad 0.2, Inst 22: 38
+  ✓ [53/270] Densidad 0.2, Inst 23: 35
+  ✓ [54/270] Densidad 0.2, Inst 24: 35
+  ✓ [55/270] Densidad 0.2, Inst 25: 37
+  ✓ [56/270] Densidad 0.2, Inst 26: 36
+  ✓ [57/270] Densidad 0.2, Inst 27: 36
+  ✓ [58/270] Densidad 0.2, Inst 28: 38
+  ✓ [59/270] Densidad 0.2, Inst 29: 35
+  ✓ [60/270] Densidad 0.2, Inst 30: 36
+
+  📊 Densidad 0.2 completada en 302.7s:
+     Media: 36.27, Desv: 0.94, Min: 35, Max: 38
+     Instancias: 30/30
+  ✓ [61/270] Densidad 0.3, Inst 1: 25
+  ✓ [62/270] Densidad 0.3, Inst 2: 25
+  ✓ [63/270] Densidad 0.3, Inst 3: 26
+  ✓ [64/270] Densidad 0.3, Inst 4: 26
+  ✓ [65/270] Densidad 0.3, Inst 5: 26
+  ✓ [66/270] Densidad 0.3, Inst 6: 25
+  ✓ [67/270] Densidad 0.3, Inst 7: 25
+  ✓ [68/270] Densidad 0.3, Inst 8: 25
+  ✓ [69/270] Densidad 0.3, Inst 9: 25
+  ✓ [70/270] Densidad 0.3, Inst 10: 26
+  ✓ [71/270] Densidad 0.3, Inst 11: 26
+  ✓ [72/270] Densidad 0.3, Inst 12: 25
+  ✓ [73/270] Densidad 0.3, Inst 13: 25
+  ✓ [74/270] Densidad 0.3, Inst 14: 26
+  ✓ [75/270] Densidad 0.3, Inst 15: 25
+  ✓ [76/270] Densidad 0.3, Inst 16: 25
+  ✓ [77/270] Densidad 0.3, Inst 17: 25
+  ✓ [78/270] Densidad 0.3, Inst 18: 26
+  ✓ [79/270] Densidad 0.3, Inst 19: 25
+  ✓ [80/270] Densidad 0.3, Inst 20: 26
+  ✓ [81/270] Densidad 0.3, Inst 21: 25
+  ✓ [82/270] Densidad 0.3, Inst 22: 26
+  ✓ [83/270] Densidad 0.3, Inst 23: 26
+  ✓ [84/270] Densidad 0.3, Inst 24: 25
+  ✓ [85/270] Densidad 0.3, Inst 25: 26
+  ✓ [86/270] Densidad 0.3, Inst 26: 25
+  ✓ [87/270] Densidad 0.3, Inst 27: 26
+  ✓ [88/270] Densidad 0.3, Inst 28: 25
+  ✓ [89/270] Densidad 0.3, Inst 29: 25
+  ✓ [90/270] Densidad 0.3, Inst 30: 25
+
+  📊 Densidad 0.3 completada en 304.7s:
+     Media: 25.40, Desv: 0.50, Min: 25, Max: 26
+     Instancias: 30/30
+  ✓ [91/270] Densidad 0.4, Inst 1: 19
+  ✓ [92/270] Densidad 0.4, Inst 2: 19
+  ✓ [93/270] Densidad 0.4, Inst 3: 19
+  ✓ [94/270] Densidad 0.4, Inst 4: 19
+  ✓ [95/270] Densidad 0.4, Inst 5: 19
+  ✓ [96/270] Densidad 0.4, Inst 6: 19
+  ✓ [97/270] Densidad 0.4, Inst 7: 20
+  ✓ [98/270] Densidad 0.4, Inst 8: 19
+  ✓ [99/270] Densidad 0.4, Inst 9: 20
+  ✓ [100/270] Densidad 0.4, Inst 10: 20
+  ✓ [101/270] Densidad 0.4, Inst 11: 19
+  ✓ [102/270] Densidad 0.4, Inst 12: 19
+  ✓ [103/270] Densidad 0.4, Inst 13: 19
+  ✓ [104/270] Densidad 0.4, Inst 14: 20
+  ✓ [105/270] Densidad 0.4, Inst 15: 19
+  ✓ [106/270] Densidad 0.4, Inst 16: 19
+  ✓ [107/270] Densidad 0.4, Inst 17: 20
+  ✓ [108/270] Densidad 0.4, Inst 18: 20
+  ✓ [109/270] Densidad 0.4, Inst 19: 20
+  ✓ [110/270] Densidad 0.4, Inst 20: 19
+  ✓ [111/270] Densidad 0.4, Inst 21: 20
+  ✓ [112/270] Densidad 0.4, Inst 22: 20
+  ✓ [113/270] Densidad 0.4, Inst 23: 20
+  ✓ [114/270] Densidad 0.4, Inst 24: 20
+  ✓ [115/270] Densidad 0.4, Inst 25: 20
+  ✓ [116/270] Densidad 0.4, Inst 26: 19
+  ✓ [117/270] Densidad 0.4, Inst 27: 20
+  ✓ [118/270] Densidad 0.4, Inst 28: 21
+  ✓ [119/270] Densidad 0.4, Inst 29: 19
+  ✓ [120/270] Densidad 0.4, Inst 30: 20
+
+  📊 Densidad 0.4 completada en 304.5s:
+     Media: 19.53, Desv: 0.57, Min: 19, Max: 21
+     Instancias: 30/30
+  ✓ [121/270] Densidad 0.5, Inst 1: 16
+  ✓ [122/270] Densidad 0.5, Inst 2: 15
+  ✓ [123/270] Densidad 0.5, Inst 3: 15
+  ✓ [124/270] Densidad 0.5, Inst 4: 15
+  ✓ [125/270] Densidad 0.5, Inst 5: 16
+  ✓ [126/270] Densidad 0.5, Inst 6: 15
+  ✓ [127/270] Densidad 0.5, Inst 7: 15
+  ✓ [128/270] Densidad 0.5, Inst 8: 16
+  ✓ [129/270] Densidad 0.5, Inst 9: 15
+  ✓ [130/270] Densidad 0.5, Inst 10: 15
+  ✓ [131/270] Densidad 0.5, Inst 11: 15
+  ✓ [132/270] Densidad 0.5, Inst 12: 15
+  ✓ [133/270] Densidad 0.5, Inst 13: 16
+  ✓ [134/270] Densidad 0.5, Inst 14: 15
+  ✓ [135/270] Densidad 0.5, Inst 15: 15
+  ✓ [136/270] Densidad 0.5, Inst 16: 15
+  ✓ [137/270] Densidad 0.5, Inst 17: 16
+  ✓ [138/270] Densidad 0.5, Inst 18: 16
+  ✓ [139/270] Densidad 0.5, Inst 19: 16
+  ✓ [140/270] Densidad 0.5, Inst 20: 16
+  ✓ [141/270] Densidad 0.5, Inst 21: 16
+  ✓ [142/270] Densidad 0.5, Inst 22: 15
+  ✓ [143/270] Densidad 0.5, Inst 23: 15
+  ✓ [144/270] Densidad 0.5, Inst 24: 16
+  ✓ [145/270] Densidad 0.5, Inst 25: 15
+  ✓ [146/270] Densidad 0.5, Inst 26: 16
+  ✓ [147/270] Densidad 0.5, Inst 27: 15
+  ✓ [148/270] Densidad 0.5, Inst 28: 16
+  ✓ [149/270] Densidad 0.5, Inst 29: 15
+  ✓ [150/270] Densidad 0.5, Inst 30: 16
+
+  📊 Densidad 0.5 completada en 305.7s:
+     Media: 15.43, Desv: 0.50, Min: 15, Max: 16
+     Instancias: 30/30
+  ✓ [151/270] Densidad 0.6, Inst 1: 12
+  ✓ [152/270] Densidad 0.6, Inst 2: 13
+  ✓ [153/270] Densidad 0.6, Inst 3: 12
+  ✓ [154/270] Densidad 0.6, Inst 4: 13
+  ✓ [155/270] Densidad 0.6, Inst 5: 13
+  ✓ [156/270] Densidad 0.6, Inst 6: 13
+  ✓ [157/270] Densidad 0.6, Inst 7: 13
+  ✓ [158/270] Densidad 0.6, Inst 8: 12
+  ✓ [159/270] Densidad 0.6, Inst 9: 13
+  ✓ [160/270] Densidad 0.6, Inst 10: 13
+  ✓ [161/270] Densidad 0.6, Inst 11: 12
+  ✓ [162/270] Densidad 0.6, Inst 12: 13
+  ✓ [163/270] Densidad 0.6, Inst 13: 13
+  ✓ [164/270] Densidad 0.6, Inst 14: 13
+  ✓ [165/270] Densidad 0.6, Inst 15: 12
+  ✓ [166/270] Densidad 0.6, Inst 16: 13
+  ✓ [167/270] Densidad 0.6, Inst 17: 13
+  ✓ [168/270] Densidad 0.6, Inst 18: 13
+  ✓ [169/270] Densidad 0.6, Inst 19: 13
+  ✓ [170/270] Densidad 0.6, Inst 20: 13
+  ✓ [171/270] Densidad 0.6, Inst 21: 13
+  ✓ [172/270] Densidad 0.6, Inst 22: 13
+  ✓ [173/270] Densidad 0.6, Inst 23: 13
+  ✓ [174/270] Densidad 0.6, Inst 24: 13
+  ✓ [175/270] Densidad 0.6, Inst 25: 13
+  ✓ [176/270] Densidad 0.6, Inst 26: 13
+  ✓ [177/270] Densidad 0.6, Inst 27: 13
+  ✓ [178/270] Densidad 0.6, Inst 28: 13
+  ✓ [179/270] Densidad 0.6, Inst 29: 13
+  ✓ [180/270] Densidad 0.6, Inst 30: 13
+
+  📊 Densidad 0.6 completada en 306.5s:
+     Media: 12.83, Desv: 0.38, Min: 12, Max: 13
+     Instancias: 30/30
+  ✓ [181/270] Densidad 0.7, Inst 1: 11
+  ✓ [182/270] Densidad 0.7, Inst 2: 10
+  ✓ [183/270] Densidad 0.7, Inst 3: 10
+  ✓ [184/270] Densidad 0.7, Inst 4: 11
+  ✓ [185/270] Densidad 0.7, Inst 5: 10
+  ✓ [186/270] Densidad 0.7, Inst 6: 10
+  ✓ [187/270] Densidad 0.7, Inst 7: 11
+  ✓ [188/270] Densidad 0.7, Inst 8: 10
+  ✓ [189/270] Densidad 0.7, Inst 9: 10
+  ✓ [190/270] Densidad 0.7, Inst 10: 10
+  ✓ [191/270] Densidad 0.7, Inst 11: 10
+  ✓ [192/270] Densidad 0.7, Inst 12: 10
+  ✓ [193/270] Densidad 0.7, Inst 13: 10
+  ✓ [194/270] Densidad 0.7, Inst 14: 10
+  ✓ [195/270] Densidad 0.7, Inst 15: 11
+  ✓ [196/270] Densidad 0.7, Inst 16: 11
+  ✓ [197/270] Densidad 0.7, Inst 17: 11
+  ✓ [198/270] Densidad 0.7, Inst 18: 10
+  ✓ [199/270] Densidad 0.7, Inst 19: 11
+  ✓ [200/270] Densidad 0.7, Inst 20: 11
+  ✓ [201/270] Densidad 0.7, Inst 21: 11
+  ✓ [202/270] Densidad 0.7, Inst 22: 11
+  ✓ [203/270] Densidad 0.7, Inst 23: 10
+  ✓ [204/270] Densidad 0.7, Inst 24: 11
+  ✓ [205/270] Densidad 0.7, Inst 25: 11
+  ✓ [206/270] Densidad 0.7, Inst 26: 11
+  ✓ [207/270] Densidad 0.7, Inst 27: 11
+  ✓ [208/270] Densidad 0.7, Inst 28: 11
+  ✓ [209/270] Densidad 0.7, Inst 29: 11
+  ✓ [210/270] Densidad 0.7, Inst 30: 11
+
+  📊 Densidad 0.7 completada en 307.0s:
+     Media: 10.57, Desv: 0.50, Min: 10, Max: 11
+     Instancias: 30/30
+  ✓ [211/270] Densidad 0.8, Inst 1: 9
+  ✓ [212/270] Densidad 0.8, Inst 2: 9
+  ✓ [213/270] Densidad 0.8, Inst 3: 9
+  ✓ [214/270] Densidad 0.8, Inst 4: 9
+  ✓ [215/270] Densidad 0.8, Inst 5: 9
+  ✓ [216/270] Densidad 0.8, Inst 6: 9
+  ✓ [217/270] Densidad 0.8, Inst 7: 9
+  ✓ [218/270] Densidad 0.8, Inst 8: 8
+  ✓ [219/270] Densidad 0.8, Inst 9: 9
+  ✓ [220/270] Densidad 0.8, Inst 10: 8
+  ✓ [221/270] Densidad 0.8, Inst 11: 9
+  ✓ [222/270] Densidad 0.8, Inst 12: 9
+  ✓ [223/270] Densidad 0.8, Inst 13: 9
+  ✓ [224/270] Densidad 0.8, Inst 14: 9
+  ✓ [225/270] Densidad 0.8, Inst 15: 9
+  ✓ [226/270] Densidad 0.8, Inst 16: 9
+  ✓ [227/270] Densidad 0.8, Inst 17: 9
+  ✓ [228/270] Densidad 0.8, Inst 18: 9
+  ✓ [229/270] Densidad 0.8, Inst 19: 9
+  ✓ [230/270] Densidad 0.8, Inst 20: 9
+  ✓ [231/270] Densidad 0.8, Inst 21: 9
+  ✓ [232/270] Densidad 0.8, Inst 22: 9
+  ✓ [233/270] Densidad 0.8, Inst 23: 9
+  ✓ [234/270] Densidad 0.8, Inst 24: 9
+  ✓ [235/270] Densidad 0.8, Inst 25: 9
+  ✓ [236/270] Densidad 0.8, Inst 26: 9
+  ✓ [237/270] Densidad 0.8, Inst 27: 9
+  ✓ [238/270] Densidad 0.8, Inst 28: 9
+  ✓ [239/270] Densidad 0.8, Inst 29: 8
+  ✓ [240/270] Densidad 0.8, Inst 30: 8
+
+  📊 Densidad 0.8 completada en 308.0s:
+     Media: 8.87, Desv: 0.35, Min: 8, Max: 9
+     Instancias: 30/30
+  ✓ [241/270] Densidad 0.9, Inst 1: 7
+  ✓ [242/270] Densidad 0.9, Inst 2: 7
+  ✓ [243/270] Densidad 0.9, Inst 3: 7
+  ✓ [244/270] Densidad 0.9, Inst 4: 7
+  ✓ [245/270] Densidad 0.9, Inst 5: 7
+  ✓ [246/270] Densidad 0.9, Inst 6: 7
+  ✓ [247/270] Densidad 0.9, Inst 7: 7
+  ✓ [248/270] Densidad 0.9, Inst 8: 7
+  ✓ [249/270] Densidad 0.9, Inst 9: 7
+  ✓ [250/270] Densidad 0.9, Inst 10: 7
+  ✓ [251/270] Densidad 0.9, Inst 11: 7
+  ✓ [252/270] Densidad 0.9, Inst 12: 7
+  ✓ [253/270] Densidad 0.9, Inst 13: 7
+  ✓ [254/270] Densidad 0.9, Inst 14: 7
+  ✓ [255/270] Densidad 0.9, Inst 15: 7
+  ✓ [256/270] Densidad 0.9, Inst 16: 7
+  ✓ [257/270] Densidad 0.9, Inst 17: 7
+  ✓ [258/270] Densidad 0.9, Inst 18: 7
+  ✓ [259/270] Densidad 0.9, Inst 19: 7
+  ✓ [260/270] Densidad 0.9, Inst 20: 7
+  ✓ [261/270] Densidad 0.9, Inst 21: 7
+  ✓ [262/270] Densidad 0.9, Inst 22: 7
+  ✓ [263/270] Densidad 0.9, Inst 23: 7
+  ✓ [264/270] Densidad 0.9, Inst 24: 7
+  ✓ [265/270] Densidad 0.9, Inst 25: 7
+  ✓ [266/270] Densidad 0.9, Inst 26: 7
+  ✓ [267/270] Densidad 0.9, Inst 27: 7
+  ✓ [268/270] Densidad 0.9, Inst 28: 7
+  ✓ [269/270] Densidad 0.9, Inst 29: 7
+  ✓ [270/270] Densidad 0.9, Inst 30: 7
+
+  📊 Densidad 0.9 completada en 309.3s:
+     Media: 7.00, Desv: 0.00, Min: 7, Max: 7
+     Instancias: 30/30
+
+  ✅ Resultados individuales guardados en: metaheuristica_poblacional/testing/results2000_brkga_optimized.csv
+
+  📈 RESUMEN TAMAÑO 2000:
+  Densidad     Media        Desv.Est     N       
+  --------------------------------------------
+  0.1          62.77        1.68         30      
+  0.2          36.27        0.94         30      
+  0.3          25.40        0.50         30      
+  0.4          19.53        0.57         30      
+  0.5          15.43        0.50         30      
+  0.6          12.83        0.38         30      
+  0.7          10.57        0.50         30      
+  0.8          8.87         0.35         30      
+  0.9          7.00         0.00         30      
+
+  ✅ Resumen estadístico guardado en: metaheuristica_poblacional/testing/results2000_brkga_optimized_summary.csv
+
+================================================================================
+PROCESANDO GRAFOS DE TAMAÑO 3000
+================================================================================
+  ✓ [1/270] Densidad 0.1, Inst 1: 66
+  ✓ [2/270] Densidad 0.1, Inst 2: 66
+  ✓ [3/270] Densidad 0.1, Inst 3: 66
+  ✓ [4/270] Densidad 0.1, Inst 4: 64
+  ✓ [5/270] Densidad 0.1, Inst 5: 65
+  ✓ [6/270] Densidad 0.1, Inst 6: 65
+  ✓ [7/270] Densidad 0.1, Inst 7: 66
+  ✓ [8/270] Densidad 0.1, Inst 8: 65
+  ✓ [9/270] Densidad 0.1, Inst 9: 65
+  ✓ [10/270] Densidad 0.1, Inst 10: 65
+  ✓ [11/270] Densidad 0.1, Inst 11: 65
+  ✓ [12/270] Densidad 0.1, Inst 12: 65
+  ✓ [13/270] Densidad 0.1, Inst 13: 66
+  ✓ [14/270] Densidad 0.1, Inst 14: 67
+  ✓ [15/270] Densidad 0.1, Inst 15: 65
+  ✓ [16/270] Densidad 0.1, Inst 16: 65
+  ✓ [17/270] Densidad 0.1, Inst 17: 66
+  ✓ [18/270] Densidad 0.1, Inst 18: 64
+  ✓ [19/270] Densidad 0.1, Inst 19: 66
+  ✓ [20/270] Densidad 0.1, Inst 20: 66
+  ✓ [21/270] Densidad 0.1, Inst 21: 65
+  ✓ [22/270] Densidad 0.1, Inst 22: 65
+  ✓ [23/270] Densidad 0.1, Inst 23: 65
+  ✓ [24/270] Densidad 0.1, Inst 24: 65
+  ✓ [25/270] Densidad 0.1, Inst 25: 65
+  ✓ [26/270] Densidad 0.1, Inst 26: 67
+  ✓ [27/270] Densidad 0.1, Inst 27: 65
+  ✓ [28/270] Densidad 0.1, Inst 28: 65
+  ✓ [29/270] Densidad 0.1, Inst 29: 65
+  ✓ [30/270] Densidad 0.1, Inst 30: 65
+
+  📊 Densidad 0.1 completada en 303.7s:
+     Media: 65.33, Desv: 0.71, Min: 64, Max: 67
+     Instancias: 30/30
+  ✓ [31/270] Densidad 0.2, Inst 1: 37
+  ✓ [32/270] Densidad 0.2, Inst 2: 37
+  ✓ [33/270] Densidad 0.2, Inst 3: 37
+  ✓ [34/270] Densidad 0.2, Inst 4: 36
+  ✓ [35/270] Densidad 0.2, Inst 5: 37
+  ✓ [36/270] Densidad 0.2, Inst 6: 37
+  ✓ [37/270] Densidad 0.2, Inst 7: 37
+  ✓ [38/270] Densidad 0.2, Inst 8: 38
+  ✓ [39/270] Densidad 0.2, Inst 9: 39
+  ✓ [40/270] Densidad 0.2, Inst 10: 37
+  ✓ [41/270] Densidad 0.2, Inst 11: 37
+  ✓ [42/270] Densidad 0.2, Inst 12: 39
+  ✓ [43/270] Densidad 0.2, Inst 13: 36
+  ✓ [44/270] Densidad 0.2, Inst 14: 37
+  ✓ [45/270] Densidad 0.2, Inst 15: 41
+  ✓ [46/270] Densidad 0.2, Inst 16: 38
+  ✓ [47/270] Densidad 0.2, Inst 17: 38
+  ✓ [48/270] Densidad 0.2, Inst 18: 37
+  ✓ [49/270] Densidad 0.2, Inst 19: 37
+  ✓ [50/270] Densidad 0.2, Inst 20: 37
+  ✓ [51/270] Densidad 0.2, Inst 21: 37
+  ✓ [52/270] Densidad 0.2, Inst 22: 38
+  ✓ [53/270] Densidad 0.2, Inst 23: 37
+  ✓ [54/270] Densidad 0.2, Inst 24: 37
+  ✓ [55/270] Densidad 0.2, Inst 25: 37
+  ✓ [56/270] Densidad 0.2, Inst 26: 37
+  ✓ [57/270] Densidad 0.2, Inst 27: 37
+  ✓ [58/270] Densidad 0.2, Inst 28: 37
+  ✓ [59/270] Densidad 0.2, Inst 29: 37
+  ✓ [60/270] Densidad 0.2, Inst 30: 37
+
+  📊 Densidad 0.2 completada en 305.7s:
+     Media: 37.33, Desv: 0.96, Min: 36, Max: 41
+     Instancias: 30/30
+  ✓ [61/270] Densidad 0.3, Inst 1: 26
+  ✓ [62/270] Densidad 0.3, Inst 2: 26
+  ✓ [63/270] Densidad 0.3, Inst 3: 26
+  ✓ [64/270] Densidad 0.3, Inst 4: 26
+  ✓ [65/270] Densidad 0.3, Inst 5: 27
+  ✓ [66/270] Densidad 0.3, Inst 6: 26
+  ✓ [67/270] Densidad 0.3, Inst 7: 26
+  ✓ [68/270] Densidad 0.3, Inst 8: 27
+  ✓ [69/270] Densidad 0.3, Inst 9: 26
+  ✓ [70/270] Densidad 0.3, Inst 10: 26
+  ✓ [71/270] Densidad 0.3, Inst 11: 27
+  ✓ [72/270] Densidad 0.3, Inst 12: 26
+  ✓ [73/270] Densidad 0.3, Inst 13: 26
+  ✓ [74/270] Densidad 0.3, Inst 14: 27
+  ✓ [75/270] Densidad 0.3, Inst 15: 26
+  ✓ [76/270] Densidad 0.3, Inst 16: 26
+  ✓ [77/270] Densidad 0.3, Inst 17: 26
+  ✓ [78/270] Densidad 0.3, Inst 18: 27
+  ✓ [79/270] Densidad 0.3, Inst 19: 26
+  ✓ [80/270] Densidad 0.3, Inst 20: 26
+  ✓ [81/270] Densidad 0.3, Inst 21: 27
+  ✓ [82/270] Densidad 0.3, Inst 22: 27
+  ✓ [83/270] Densidad 0.3, Inst 23: 27
+  ✓ [84/270] Densidad 0.3, Inst 24: 27
+  ✓ [85/270] Densidad 0.3, Inst 25: 26
+  ✓ [86/270] Densidad 0.3, Inst 26: 27
+  ✓ [87/270] Densidad 0.3, Inst 27: 26
+  ✓ [88/270] Densidad 0.3, Inst 28: 26
+  ✓ [89/270] Densidad 0.3, Inst 29: 26
+  ✓ [90/270] Densidad 0.3, Inst 30: 26
+
+  📊 Densidad 0.3 completada en 307.2s:
+     Media: 26.33, Desv: 0.48, Min: 26, Max: 27
+     Instancias: 30/30
+  ✓ [91/270] Densidad 0.4, Inst 1: 20
+  ✓ [92/270] Densidad 0.4, Inst 2: 20
+  ✓ [93/270] Densidad 0.4, Inst 3: 20
+  ✓ [94/270] Densidad 0.4, Inst 4: 20
+  ✓ [95/270] Densidad 0.4, Inst 5: 20
+  ✓ [96/270] Densidad 0.4, Inst 6: 21
+  ✓ [97/270] Densidad 0.4, Inst 7: 20
+  ✓ [98/270] Densidad 0.4, Inst 8: 21
+  ✓ [99/270] Densidad 0.4, Inst 9: 20
+  ✓ [100/270] Densidad 0.4, Inst 10: 20
+  ✓ [101/270] Densidad 0.4, Inst 11: 20
+  ✓ [102/270] Densidad 0.4, Inst 12: 20
+  ✓ [103/270] Densidad 0.4, Inst 13: 20
+  ✓ [104/270] Densidad 0.4, Inst 14: 21
+  ✓ [105/270] Densidad 0.4, Inst 15: 20
+  ✓ [106/270] Densidad 0.4, Inst 16: 20
+  ✓ [107/270] Densidad 0.4, Inst 17: 20
+  ✓ [108/270] Densidad 0.4, Inst 18: 20
+  ✓ [109/270] Densidad 0.4, Inst 19: 20
+  ✓ [110/270] Densidad 0.4, Inst 20: 21
+  ✓ [111/270] Densidad 0.4, Inst 21: 20
+  ✓ [112/270] Densidad 0.4, Inst 22: 21
+  ✓ [113/270] Densidad 0.4, Inst 23: 20
+  ✓ [114/270] Densidad 0.4, Inst 24: 20
+  ✓ [115/270] Densidad 0.4, Inst 25: 20
+  ✓ [116/270] Densidad 0.4, Inst 26: 20
+  ✓ [117/270] Densidad 0.4, Inst 27: 21
+  ✓ [118/270] Densidad 0.4, Inst 28: 21
+  ✓ [119/270] Densidad 0.4, Inst 29: 20
+  ✓ [120/270] Densidad 0.4, Inst 30: 20
+
+  📊 Densidad 0.4 completada en 309.4s:
+     Media: 20.23, Desv: 0.43, Min: 20, Max: 21
+     Instancias: 30/30
+  ✓ [121/270] Densidad 0.5, Inst 1: 16
+  ✓ [122/270] Densidad 0.5, Inst 2: 16
+  ✓ [123/270] Densidad 0.5, Inst 3: 16
+  ✓ [124/270] Densidad 0.5, Inst 4: 16
+  ✓ [125/270] Densidad 0.5, Inst 5: 17
+  ✓ [126/270] Densidad 0.5, Inst 6: 16
+  ✓ [127/270] Densidad 0.5, Inst 7: 16
+  ✓ [128/270] Densidad 0.5, Inst 8: 16
+  ✓ [129/270] Densidad 0.5, Inst 9: 16
+  ✓ [130/270] Densidad 0.5, Inst 10: 16
+  ✓ [131/270] Densidad 0.5, Inst 11: 17
+  ✓ [132/270] Densidad 0.5, Inst 12: 16
+  ✓ [133/270] Densidad 0.5, Inst 13: 16
+  ✓ [134/270] Densidad 0.5, Inst 14: 16
+  ✓ [135/270] Densidad 0.5, Inst 15: 16
+  ✓ [136/270] Densidad 0.5, Inst 16: 16
+  ✓ [137/270] Densidad 0.5, Inst 17: 16
+  ✓ [138/270] Densidad 0.5, Inst 18: 16
+  ✓ [139/270] Densidad 0.5, Inst 19: 16
+  ✓ [140/270] Densidad 0.5, Inst 20: 16
+  ✓ [141/270] Densidad 0.5, Inst 21: 16
+  ✓ [142/270] Densidad 0.5, Inst 22: 16
+  ✓ [143/270] Densidad 0.5, Inst 23: 16
+  ✓ [144/270] Densidad 0.5, Inst 24: 16
+  ✓ [145/270] Densidad 0.5, Inst 25: 16
+  ✓ [146/270] Densidad 0.5, Inst 26: 16
+  ✓ [147/270] Densidad 0.5, Inst 27: 17
+  ✓ [148/270] Densidad 0.5, Inst 28: 16
+  ✓ [149/270] Densidad 0.5, Inst 29: 16
+  ✓ [150/270] Densidad 0.5, Inst 30: 16
+
+  📊 Densidad 0.5 completada en 311.3s:
+     Media: 16.10, Desv: 0.31, Min: 16, Max: 17
+     Instancias: 30/30
+  ✓ [151/270] Densidad 0.6, Inst 1: 13
+  ✓ [152/270] Densidad 0.6, Inst 2: 14
+  ✓ [153/270] Densidad 0.6, Inst 3: 14
+  ✓ [154/270] Densidad 0.6, Inst 4: 14
+  ✓ [155/270] Densidad 0.6, Inst 5: 13
+  ✓ [156/270] Densidad 0.6, Inst 6: 13
+  ✓ [157/270] Densidad 0.6, Inst 7: 13
+  ✓ [158/270] Densidad 0.6, Inst 8: 13
+  ✓ [159/270] Densidad 0.6, Inst 9: 13
+  ✓ [160/270] Densidad 0.6, Inst 10: 13
+  ✓ [161/270] Densidad 0.6, Inst 11: 13
+  ✓ [162/270] Densidad 0.6, Inst 12: 13
+  ✓ [163/270] Densidad 0.6, Inst 13: 13
+  ✓ [164/270] Densidad 0.6, Inst 14: 13
+  ✓ [165/270] Densidad 0.6, Inst 15: 13
+  ✓ [166/270] Densidad 0.6, Inst 16: 13
+  ✓ [167/270] Densidad 0.6, Inst 17: 14
+  ✓ [168/270] Densidad 0.6, Inst 18: 13
+  ✓ [169/270] Densidad 0.6, Inst 19: 13
+  ✓ [170/270] Densidad 0.6, Inst 20: 13
+  ✓ [171/270] Densidad 0.6, Inst 21: 13
+  ✓ [172/270] Densidad 0.6, Inst 22: 13
+  ✓ [173/270] Densidad 0.6, Inst 23: 13
+  ✓ [174/270] Densidad 0.6, Inst 24: 13
+  ✓ [175/270] Densidad 0.6, Inst 25: 13
+  ✓ [176/270] Densidad 0.6, Inst 26: 13
+  ✓ [177/270] Densidad 0.6, Inst 27: 13
+  ✓ [178/270] Densidad 0.6, Inst 28: 13
+  ✓ [179/270] Densidad 0.6, Inst 29: 13
+  ✓ [180/270] Densidad 0.6, Inst 30: 13
+
+  📊 Densidad 0.6 completada en 313.2s:
+     Media: 13.13, Desv: 0.35, Min: 13, Max: 14
+     Instancias: 30/30
+  ✓ [181/270] Densidad 0.7, Inst 1: 11
+  ✓ [182/270] Densidad 0.7, Inst 2: 11
+  ✓ [183/270] Densidad 0.7, Inst 3: 11
+  ✓ [184/270] Densidad 0.7, Inst 4: 11
+  ✓ [185/270] Densidad 0.7, Inst 5: 11
+  ✓ [186/270] Densidad 0.7, Inst 6: 11
+  ✓ [187/270] Densidad 0.7, Inst 7: 11
+  ✓ [188/270] Densidad 0.7, Inst 8: 11
+  ✓ [189/270] Densidad 0.7, Inst 9: 11
+  ✓ [190/270] Densidad 0.7, Inst 10: 11
+  ✓ [191/270] Densidad 0.7, Inst 11: 12
+  ✓ [192/270] Densidad 0.7, Inst 12: 11
+  ✓ [193/270] Densidad 0.7, Inst 13: 11
+  ✓ [194/270] Densidad 0.7, Inst 14: 11
+  ✓ [195/270] Densidad 0.7, Inst 15: 11
+  ✓ [196/270] Densidad 0.7, Inst 16: 11
+  ✓ [197/270] Densidad 0.7, Inst 17: 11
+  ✓ [198/270] Densidad 0.7, Inst 18: 11
+  ✓ [199/270] Densidad 0.7, Inst 19: 11
+  ✓ [200/270] Densidad 0.7, Inst 20: 11
+  ✓ [201/270] Densidad 0.7, Inst 21: 11
+  ✓ [202/270] Densidad 0.7, Inst 22: 11
+  ✓ [203/270] Densidad 0.7, Inst 23: 11
+  ✓ [204/270] Densidad 0.7, Inst 24: 11
+  ✓ [205/270] Densidad 0.7, Inst 25: 11
+  ✓ [206/270] Densidad 0.7, Inst 26: 11
+  ✓ [207/270] Densidad 0.7, Inst 27: 11
+  ✓ [208/270] Densidad 0.7, Inst 28: 11
+  ✓ [209/270] Densidad 0.7, Inst 29: 11
+  ✓ [210/270] Densidad 0.7, Inst 30: 11
+
+  📊 Densidad 0.7 completada en 315.4s:
+     Media: 11.03, Desv: 0.18, Min: 11, Max: 12
+     Instancias: 30/30
+  ✓ [211/270] Densidad 0.8, Inst 1: 10
+  ✓ [212/270] Densidad 0.8, Inst 2: 9
+  ✓ [213/270] Densidad 0.8, Inst 3: 9
+  ✓ [214/270] Densidad 0.8, Inst 4: 9
+  ✓ [215/270] Densidad 0.8, Inst 5: 9
+  ✓ [216/270] Densidad 0.8, Inst 6: 9
+  ✓ [217/270] Densidad 0.8, Inst 7: 9
+  ✓ [218/270] Densidad 0.8, Inst 8: 9
+  ✓ [219/270] Densidad 0.8, Inst 9: 9
+  ✓ [220/270] Densidad 0.8, Inst 10: 9
+  ✓ [221/270] Densidad 0.8, Inst 11: 9
+  ✓ [222/270] Densidad 0.8, Inst 12: 9
+  ✓ [223/270] Densidad 0.8, Inst 13: 9
+  ✓ [224/270] Densidad 0.8, Inst 14: 9
+  ✓ [225/270] Densidad 0.8, Inst 15: 9
+  ✓ [226/270] Densidad 0.8, Inst 16: 9
+  ✓ [227/270] Densidad 0.8, Inst 17: 9
+  ✓ [228/270] Densidad 0.8, Inst 18: 9
+  ✓ [229/270] Densidad 0.8, Inst 19: 9
+  ✓ [230/270] Densidad 0.8, Inst 20: 9
+  ✓ [231/270] Densidad 0.8, Inst 21: 9
+  ✓ [232/270] Densidad 0.8, Inst 22: 9
+  ✓ [233/270] Densidad 0.8, Inst 23: 9
+  ✓ [234/270] Densidad 0.8, Inst 24: 9
+  ✓ [235/270] Densidad 0.8, Inst 25: 9
+  ✓ [236/270] Densidad 0.8, Inst 26: 9
+  ✓ [237/270] Densidad 0.8, Inst 27: 9
+  ✓ [238/270] Densidad 0.8, Inst 28: 9
+  ✓ [239/270] Densidad 0.8, Inst 29: 9
+  ✓ [240/270] Densidad 0.8, Inst 30: 9
+
+  📊 Densidad 0.8 completada en 317.8s:
+     Media: 9.03, Desv: 0.18, Min: 9, Max: 10
+     Instancias: 30/30
+  ✓ [241/270] Densidad 0.9, Inst 1: 7
+  ✓ [242/270] Densidad 0.9, Inst 2: 7
+  ✓ [243/270] Densidad 0.9, Inst 3: 7
+  ✓ [244/270] Densidad 0.9, Inst 4: 7
+  ✓ [245/270] Densidad 0.9, Inst 5: 7
+  ✓ [246/270] Densidad 0.9, Inst 6: 7
+  ✓ [247/270] Densidad 0.9, Inst 7: 7
+  ✓ [248/270] Densidad 0.9, Inst 8: 7
+  ✓ [249/270] Densidad 0.9, Inst 9: 7
+  ✓ [250/270] Densidad 0.9, Inst 10: 7
+  ✓ [251/270] Densidad 0.9, Inst 11: 7
+  ✓ [252/270] Densidad 0.9, Inst 12: 7
+  ✓ [253/270] Densidad 0.9, Inst 13: 7
+  ✓ [254/270] Densidad 0.9, Inst 14: 7
+  ✓ [255/270] Densidad 0.9, Inst 15: 7
+  ✓ [256/270] Densidad 0.9, Inst 16: 7
+  ✓ [257/270] Densidad 0.9, Inst 17: 7
+  ✓ [258/270] Densidad 0.9, Inst 18: 7
+  ✓ [259/270] Densidad 0.9, Inst 19: 7
+  ✓ [260/270] Densidad 0.9, Inst 20: 7
+  ✓ [261/270] Densidad 0.9, Inst 21: 7
+  ✓ [262/270] Densidad 0.9, Inst 22: 8
+  ✓ [263/270] Densidad 0.9, Inst 23: 7
+  ✓ [264/270] Densidad 0.9, Inst 24: 7
+  ✓ [265/270] Densidad 0.9, Inst 25: 7
+  ✓ [266/270] Densidad 0.9, Inst 26: 7
+  ✓ [267/270] Densidad 0.9, Inst 27: 7
+  ✓ [268/270] Densidad 0.9, Inst 28: 8
+  ✓ [269/270] Densidad 0.9, Inst 29: 7
+  ✓ [270/270] Densidad 0.9, Inst 30: 7
+
+  📊 Densidad 0.9 completada en 319.4s:
+     Media: 7.07, Desv: 0.25, Min: 7, Max: 8
+     Instancias: 30/30
+
+  ✅ Resultados individuales guardados en: metaheuristica_poblacional/testing/results3000_brkga_optimized.csv
+
+  📈 RESUMEN TAMAÑO 3000:
+  Densidad     Media        Desv.Est     N       
+  --------------------------------------------
+  0.1          65.33        0.71         30      
+  0.2          37.33        0.96         30      
+  0.3          26.33        0.48         30      
+  0.4          20.23        0.43         30      
+  0.5          16.10        0.31         30      
+  0.6          13.13        0.35         30      
+  0.7          11.03        0.18         30      
+  0.8          9.03         0.18         30      
+  0.9          7.07         0.25         30      
+
+  ✅ Resumen estadístico guardado en: metaheuristica_poblacional/testing/results3000_brkga_optimized_summary.csv
+
+================================================================================
+✅ PROCESO COMPLETADO
+Tiempo total: 137.79 minutos (8267.3s)
+Timestamp: 2025-11-06 04:55:11
+================================================================================

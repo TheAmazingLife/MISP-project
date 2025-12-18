@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# irace le pasa a este script los mismos argumentos que al target-runner
+CONFIG_ID=$1
+INSTANCE_ID=$2
+SEED=$3
+INSTANCE=$4
+
+# Definimos el nombre del archivo donde Slurm guardó la salida
+# (Debe coincidir EXACTAMENTE con el nombre en target-runner-slurm.sh)
+STDOUT=c${CONFIG_ID}-${INSTANCE_ID}-${SEED}.stdout
+
+# Verificamos si el archivo existe
+if [ ! -s "${STDOUT}" ]; then
+    echo "Error: No se encontró el archivo de salida ${STDOUT}" >&2
+    exit 1
+fi
+
+# Extraemos el costo (asumiendo que es el número en la última línea)
+COST=$(tail -n 1 "${STDOUT}" | grep -e '^[[:space:]]*[+-]\?[0-9]' | cut -f1)
+
+# Se lo entregamos a irace
+echo "$COST"
+
+# (Opcional) Borramos el archivo para no llenar el disco de basura
+# rm -f "${STDOUT}"
