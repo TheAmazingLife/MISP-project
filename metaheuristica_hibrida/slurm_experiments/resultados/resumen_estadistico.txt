@@ -1,0 +1,23 @@
+========================================
+RESUMEN ESTADÍSTICO - EXPERIMENTOS SLURM
+========================================
+
+Fecha del análisis: jue dic 18 02:05:30 -03 2025
+
+TOTALES:
+  - Total de experimentos: 810
+  - Experimentos exitosos: 810
+  - Experimentos fallidos: 0
+  - Tasa de éxito: 100.00%
+
+INSTANCIAS ÚNICAS PROCESADAS:
+810 instancias diferentes
+
+SEMILLAS UTILIZADAS:
+42
+
+========================================
+ARCHIVOS GENERADOS:
+  - CSV completo: /home/shared/sisadapt2/misp_project/MISP-project/metaheuristica_hibrida/slurm_experiments/resultados/analisis_resultados.csv
+  - Resumen: /home/shared/sisadapt2/misp_project/MISP-project/metaheuristica_hibrida/slurm_experiments/resultados/resumen_estadistico.txt
+========================================

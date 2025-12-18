@@ -1,0 +1,14 @@
+=========================================
+Job ID: 3961584
+Nodo: luthier27
+Instancia: /home/shared/sisadapt2/misp_project/dataset_grafos_no_dirigidos/new_3000_dataset/erdos_n3000_p0c0.1_5.graph
+Seed: 42
+Parámetros: -p 340 -pe 0.17 -pm 0.24 -rhoe 0.78
+Tiempo: 10 segundos
+=========================================
+
+-65
+
+=========================================
+Experimento finalizado con código: 0
+=========================================
