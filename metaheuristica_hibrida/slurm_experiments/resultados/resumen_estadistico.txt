@@ -2,7 +2,7 @@
 RESUMEN ESTADÍSTICO - EXPERIMENTOS SLURM
 ========================================
 
-Fecha del análisis: jue dic 18 02:05:30 -03 2025
+Fecha del análisis: jue dic 18 02:21:23 -03 2025
 
 TOTALES:
   - Total de experimentos: 810
@@ -17,7 +17,24 @@ SEMILLAS UTILIZADAS:
 42
 
 ========================================
+RESUMEN POR DENSIDAD Y TAMAÑO
+========================================
+
+TAMAÑO: n=1000
+Densidad   Media        Desv.Std     Min      Max      N.Instancias
+------------------------------------------------------------------------
+
+TAMAÑO: n=2000
+Densidad   Media        Desv.Std     Min      Max      N.Instancias
+------------------------------------------------------------------------
+
+TAMAÑO: n=3000
+Densidad   Media        Desv.Std     Min      Max      N.Instancias
+------------------------------------------------------------------------
+
+========================================
 ARCHIVOS GENERADOS:
   - CSV completo: /home/shared/sisadapt2/misp_project/MISP-project/metaheuristica_hibrida/slurm_experiments/resultados/analisis_resultados.csv
-  - Resumen: /home/shared/sisadapt2/misp_project/MISP-project/metaheuristica_hibrida/slurm_experiments/resultados/resumen_estadistico.txt
+  - Resumen por densidad: /home/shared/sisadapt2/misp_project/MISP-project/metaheuristica_hibrida/slurm_experiments/resultados/resumen_por_densidad.csv
+  - Resumen general: /home/shared/sisadapt2/misp_project/MISP-project/metaheuristica_hibrida/slurm_experiments/resultados/resumen_estadistico.txt
 ========================================
