@@ -4,7 +4,7 @@
 # Ejecuta todas las instancias del dataset con los mejores parámetros
 
 # Configuración
-DATASET_DIR="/home/shared/sisadapt2/dataset_grafos_no_dirigidos"
+DATASET_DIR="/home/shared/sisadapt2/misp_project/dataset_grafos_no_dirigidos"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 RESULTS_DIR="${SCRIPT_DIR}/resultados"
 LOG_FILE="${SCRIPT_DIR}/submission.log"

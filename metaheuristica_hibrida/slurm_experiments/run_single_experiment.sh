@@ -29,7 +29,7 @@ if [ -z "$INSTANCE" ] || [ -z "$SEED" ]; then
 fi
 
 # Configuración de rutas
-EXE="/home/shared/sisadapt2/metaheuristica_hibrida/brkga_hibrid"
+EXE="/home/shared/sisadapt2/misp_project/MISP-project/metaheuristica_hibrida/source/brkga_hibrid"
 
 # Parámetros óptimos
 POPULATION=340

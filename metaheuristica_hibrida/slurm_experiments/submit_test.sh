@@ -3,7 +3,7 @@
 # Script para enviar experimentos de prueba (solo algunas instancias)
 # Útil para verificar que todo funcione antes de enviar los 8840 experimentos completos
 
-DATASET_DIR="/home/shared/sisadapt2/dataset_grafos_no_dirigidos"
+DATASET_DIR="/home/shared/sisadapt2/misp_project/dataset_grafos_no_dirigidos"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 RESULTS_DIR="${SCRIPT_DIR}/resultados_test"
 LOG_FILE="${SCRIPT_DIR}/test_submission.log"

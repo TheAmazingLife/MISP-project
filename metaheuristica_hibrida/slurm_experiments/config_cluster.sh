@@ -9,7 +9,7 @@ echo "========================================="
 echo ""
 
 # Configuración de rutas en el cluster
-SHARED_DIR="/home/shared/sisadapt2"
+SHARED_DIR="/home/shared/sisadapt2/misp_project"
 LOCAL_SOURCE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
 echo "Directorio local: $LOCAL_SOURCE_DIR"
@@ -18,14 +18,14 @@ echo ""
 
 # 1. Crear estructura de directorios en shared
 echo "1. Creando estructura de directorios..."
-mkdir -p "${SHARED_DIR}/metaheuristica_hibrida"
+mkdir -p "${SHARED_DIR}/MISP-project/metaheuristica_hibrida/source"
 mkdir -p "${SHARED_DIR}/dataset_grafos_no_dirigidos"
 echo "   ✓ Directorios creados"
 echo ""
 
 # 2. Compilar el ejecutable si es necesario
 echo "2. Verificando ejecutable..."
-if [ ! -f "${SHARED_DIR}/metaheuristica_hibrida/brkga_hibrid" ]; then
+if [ ! -f "${SHARED_DIR}/MISP-project/metaheuristica_hibrida/source/brkga_hibrid" ]; then
     echo "   El ejecutable no existe en shared. ¿Deseas compilarlo ahora? (s/n)"
     read -r respuesta
     if [ "$respuesta" = "s" ]; then
@@ -34,7 +34,7 @@ if [ ! -f "${SHARED_DIR}/metaheuristica_hibrida/brkga_hibrid" ]; then
         make clean
         make
         if [ -f "brkga_hibrid" ]; then
-            cp brkga_hibrid "${SHARED_DIR}/metaheuristica_hibrida/"
+            cp brkga_hibrid "${SHARED_DIR}/MISP-project/metaheuristica_hibrida/source/"
             echo "   ✓ Ejecutable compilado y copiado"
         else
             echo "   ✗ Error en la compilación"
@@ -42,7 +42,7 @@ if [ ! -f "${SHARED_DIR}/metaheuristica_hibrida/brkga_hibrid" ]; then
         fi
     fi
 else
-    echo "   ✓ Ejecutable ya existe: ${SHARED_DIR}/metaheuristica_hibrida/brkga_hibrid"
+    echo "   ✓ Ejecutable ya existe: ${SHARED_DIR}/MISP-project/metaheuristica_hibrida/source/brkga_hibrid"
 fi
 echo ""
 
@@ -97,7 +97,7 @@ echo "========================================="
 echo ""
 echo "Próximos pasos:"
 echo "  1. Verifica que el ejecutable funcione:"
-echo "     ${SHARED_DIR}/metaheuristica_hibrida/brkga_hibrid --help"
+echo "     ${SHARED_DIR}/MISP-project/metaheuristica_hibrida/source/brkga_hibrid --help"
 echo ""
 echo "  2. Verifica que el dataset esté completo:"
 echo "     find ${SHARED_DIR}/dataset_grafos_no_dirigidos -name '*.graph' | wc -l"

@@ -13,9 +13,9 @@ OPTIMAL_TIME=10  # segundos
 
 # =============================================
 # RUTAS DEL CLUSTER
-# =============================================
-CLUSTER_SHARED_DIR="/home/shared/sisadapt2"
-CLUSTER_EXE="${CLUSTER_SHARED_DIR}/metaheuristica_hibrida/brkga_hibrid"
+# ============================================= 
+CLUSTER_SHARED_DIR="/home/shared/sisadapt2/misp_project"
+CLUSTER_EXE="${CLUSTER_SHARED_DIR}/MISP-project/metaheuristica_hibrida/source/brkga_hibrid"
 CLUSTER_DATASET="${CLUSTER_SHARED_DIR}/dataset_grafos_no_dirigidos"
 
 # =============================================
