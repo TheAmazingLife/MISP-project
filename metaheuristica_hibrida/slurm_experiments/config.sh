@@ -9,7 +9,7 @@ OPTIMAL_POPULATION=340
 OPTIMAL_PE=0.17
 OPTIMAL_PM=0.24
 OPTIMAL_RHOE=0.78
-OPTIMAL_TIME=60  # segundos
+OPTIMAL_TIME=10  # segundos
 
 # =============================================
 # RUTAS DEL CLUSTER
@@ -45,5 +45,5 @@ EXPERIMENT_DESCRIPTION="Experimentos con parámetros óptimos encontrados por ir
 # - Total de instancias en dataset: ~1768
 # - Total de semillas: 1 (fija: 42)
 # - Total de experimentos: ~1768
-# - Tiempo estimado por experimento: 60 segundos
+# - Tiempo estimado por experimento: 10 segundos
 # - Memoria por job: 16GB

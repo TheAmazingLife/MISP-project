@@ -6,10 +6,16 @@
 #SBATCH --mem=16G
 #SBATCH --time=00:02:00
 #SBATCH -n 1
+#SBATCH --cpus-per-task=1
 
 # Script para ejecutar un experimento individual con los mejores parámetros encontrados
 # Parámetros óptimos: -p 340 -pe 0.17 -pm 0.24 -rhoe 0.78
-# Tiempo de ejecución: 60 segundos
+# Tiempo de ejecución: 10 segundos
+# Configuración de recursos (igual que irace tuning):
+#   - Partición: main
+#   - Memoria: 16GB
+#   - Núcleos: 1
+#   - Tareas: 1
 
 # Captura de argumentos
 INSTANCE=$1
@@ -30,7 +36,7 @@ POPULATION=340
 PE=0.17
 PM=0.24
 RHOE=0.78
-TIME=60
+TIME=10
 
 # Información del job
 echo "========================================="

@@ -28,14 +28,33 @@ FAILED_JOBS=0
 # Semilla fija
 SEEDS=(42)
 
-# Buscar todas las instancias .graph
-echo "Buscando instancias en: $DATASET_DIR" | tee -a "$LOG_FILE"
-INSTANCES=($(find "$DATASET_DIR" -name "*.graph" -type f | sort))
-TOTAL_INSTANCES=${#INSTANCES[@]}
+# Configuración de instancias específicas (igual que run_optimized.py)
+SIZES=("1000" "2000" "3000")
+DENSITIES=("0.1" "0.2" "0.3" "0.4" "0.5" "0.6" "0.7" "0.8" "0.9")
+NUM_INSTANCES=30  # Instancias del 1 al 30
 
+# Construir lista de instancias
+INSTANCES=()
+echo "Construyendo lista de instancias..." | tee -a "$LOG_FILE"
+for size in "${SIZES[@]}"; do
+    for density in "${DENSITIES[@]}"; do
+        for i in $(seq 1 $NUM_INSTANCES); do
+            instance_path="${DATASET_DIR}/new_${size}_dataset/erdos_n${size}_p0c${density}_${i}.graph"
+            if [ -f "$instance_path" ]; then
+                INSTANCES+=("$instance_path")
+            fi
+        done
+    done
+done
+
+TOTAL_INSTANCES=${#INSTANCES[@]}
 echo "Total de instancias encontradas: $TOTAL_INSTANCES" | tee -a "$LOG_FILE"
-echo "Semillas a usar: ${SEEDS[@]}" | tee -a "$LOG_FILE"
-echo "Total de experimentos: $((TOTAL_INSTANCES * ${#SEEDS[@]}))" | tee -a "$LOG_FILE"
+echo "Configuración:" | tee -a "$LOG_FILE"
+echo "  - Tamaños: ${SIZES[@]}" | tee -a "$LOG_FILE"
+echo "  - Densidades: ${#DENSITIES[@]} valores (${DENSITIES[0]} a ${DENSITIES[-1]})" | tee -a "$LOG_FILE"
+echo "  - Instancias por combinación: $NUM_INSTANCES" | tee -a "$LOG_FILE"
+echo "  - Semilla: ${SEEDS[@]}" | tee -a "$LOG_FILE"
+echo "  - Total de experimentos: $TOTAL_INSTANCES" | tee -a "$LOG_FILE"
 echo "" | tee -a "$LOG_FILE"
 
 # Iterar sobre todas las instancias y semillas
