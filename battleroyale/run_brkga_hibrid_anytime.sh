@@ -60,7 +60,7 @@ else
 fi
 
 # Ruta al ejecutable standalone con anytime
-EXE="${BASE_DIR}/battleroyale/brkga_hibrid_standalone"
+EXE="${BASE_DIR}/battleroyale/bin/brkga_hibrid_standalone"
 
 # Verificar que existe el ejecutable
 if [ ! -f "$EXE" ]; then

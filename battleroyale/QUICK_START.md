@@ -1,6 +1,18 @@
 # ⚔️ Battle Royale: Guía de Uso Rápido
 
-## 🚀 Inicio en 3 pasos
+## � Compilación (solo primera vez)
+
+```bash
+# Compilar SA y BRKGA
+bash battleroyale/scripts/compile_all.sh
+
+# Compilar BRKGA_HIBRID (requiere CPLEX)
+bash battleroyale/scripts/compile_hibrid.sh
+```
+
+> Los ejecutables se generan en `battleroyale/bin/`
+
+## �🚀 Inicio en 3 pasos
 
 ### 1. Ver recomendaciones de grafos
 ```bash

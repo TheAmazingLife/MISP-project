@@ -50,7 +50,7 @@ else
 fi
 
 # Ruta al ejecutable
-EXE="${BASE_DIR}/battleroyale/sa_standalone"
+EXE="${BASE_DIR}/battleroyale/bin/sa_standalone"
 
 # Verificar que existe el ejecutable
 if [ ! -f "$EXE" ]; then

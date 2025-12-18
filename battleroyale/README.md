@@ -13,10 +13,14 @@ Este proyecto ejecuta los tres algoritmos en paralelo durante un tiempo determin
 
 ```
 battleroyale/
+├── bin/                         # Ejecutables compilados
+│   ├── sa_standalone            # SA con anytime
+│   ├── brkga_standalone         # BRKGA con anytime
+│   └── brkga_hibrid_standalone  # BRKGA_HIBRID con anytime
 ├── source/                      # Código fuente
 │   ├── sa_standalone.cpp        # SA con modo anytime
 │   ├── brkga_standalone.cpp     # BRKGA con modo anytime
-│   └── battleroyale_anytime.cpp # Comparación integrada (opcional)
+│   └── brkga_hibrid_standalone.cpp  # BRKGA_HIBRID con anytime
 ├── scripts/                     # Scripts de gestión
 │   ├── compile_all.sh           # Compilar ejecutables
 │   ├── launch_battle.sh         # Lanzar experimentos completos
@@ -44,10 +48,10 @@ bash battleroyale/scripts/compile_all.sh
 bash battleroyale/scripts/compile_hibrid.sh
 ```
 
-Esto genera:
-- `battleroyale/sa_standalone`
-- `battleroyale/brkga_standalone`
-- `battleroyale/brkga_hibrid_standalone` (con modo anytime integrado)
+Esto genera los ejecutables en `battleroyale/bin/`:
+- `battleroyale/bin/sa_standalone`
+- `battleroyale/bin/brkga_standalone`
+- `battleroyale/bin/brkga_hibrid_standalone` (con modo anytime integrado)
 
 ### 2. Lanzar experimentos en el cluster
 

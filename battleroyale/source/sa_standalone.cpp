@@ -110,8 +110,12 @@ int main(int argc, char *argv[]) {
     }
 
     // Leer grafo
-    int V, E;
-    vector<vector<int>> adj = GraphReader::readGraphFromFile(input_file, V, E);
+    int V;
+    vector<vector<int>> adj;
+    if (!GraphReader::loadFromFile(input_file, V, adj)) {
+        cerr << "Error: No se pudo cargar el grafo" << endl;
+        return 1;
+    }
 
     // Inicialización
     mt19937 gen(42);

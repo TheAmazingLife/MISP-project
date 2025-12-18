@@ -45,6 +45,9 @@ else
     fi
 fi
 
+# Crear carpeta bin si no existe
+mkdir -p battleroyale/bin
+
 echo ""
 echo -e "${YELLOW}Compilando BRKGA_HIBRID standalone con modo anytime...${NC}"
 echo ""
@@ -62,14 +65,14 @@ g++ -std=c++17 -pthread -O3 -DIL_STD \
     -L${CPLEX_DIR}/cplex/lib/x86-64_linux/static_pic -lilocplex -lcplex \
     -L${CPLEX_DIR}/concert/lib/x86-64_linux/static_pic -lconcert \
     -lm -lpthread -ldl \
-    -o battleroyale/brkga_hibrid_standalone
+    -o battleroyale/bin/brkga_hibrid_standalone
 
 if [ $? -eq 0 ]; then
     echo ""
     echo -e "${GREEN}✓${NC} BRKGA_HIBRID standalone compilado correctamente"
     echo ""
-    echo "Ejecutable generado:"
-    echo "  • battleroyale/brkga_hibrid_standalone"
+    echo "Ejecutable generado en battleroyale/bin/:"
+    echo "  • battleroyale/bin/brkga_hibrid_standalone"
     echo ""
     echo "Este ejecutable soporta modo ANYTIME y puede usarse en:"
     echo "  • battleroyale/run_brkga_hibrid_anytime.sh"

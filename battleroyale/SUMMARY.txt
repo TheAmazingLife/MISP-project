@@ -77,13 +77,18 @@ El análisis genera:
 
 ✅ BRKGA_HIBRID: Implementa seguimiento anytime COMPLETO
    → Usa threads para muestreo periódico del fitness
-   → Ejecutable standalone: battleroyale/brkga_hibrid_standalone
+   → Ejecutable standalone: battleroyale/bin/brkga_hibrid_standalone
    → Requiere CPLEX para compilar
    → Compilar con: bash battleroyale/scripts/compile_hibrid.sh
 
 ═══════════════════════════════════════════════════════════════════════════════
 📦 CONTENIDO DE LA CARPETA BATTLEROYALE/
 ═══════════════════════════════════════════════════════════════════════════════
+
+📁 EJECUTABLES (bin/):
+   ├── sa_standalone                - SA compilado
+   ├── brkga_standalone             - BRKGA compilado
+   └── brkga_hibrid_standalone      - BRKGA_HIBRID compilado
 
 📄 DOCUMENTACIÓN:
    ├── README.md                    - Documentación completa (80+ líneas)

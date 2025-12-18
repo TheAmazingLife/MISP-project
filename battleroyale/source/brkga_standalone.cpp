@@ -46,17 +46,24 @@ int main(int argc, char *argv[]) {
     }
 
     // Leer grafo
-    int V, E;
-    vector<vector<int>> adj = GraphReader::readGraphFromFile(input_file, V, E);
+    int V;
+    vector<vector<int>> adj;
+    if (!GraphReader::loadFromFile(input_file, V, adj)) {
+        cerr << "Error: No se pudo cargar el grafo" << endl;
+        return 1;
+    }
 
     // Parámetros optimizados para BRKGA
     int p = 264;
     double pe = 0.14;
     double pm = 0.25;
     double rhoe = 0.65;
+    double s = 0.0; // No usado en modo anytime
     unsigned seed = 42;
 
-    BRKGA_MISP brkga(adj, V, p, pe, pm, rhoe, seed);
+    // Crear instancia BRKGA (n, p, pe, pm, rhoe, s, adj, seed)
+    BRKGA brkga(V, p, pe, pm, rhoe, s, adj, seed);
+    brkga.inicializar_poblacion();
 
     int best_size = 0;
 
@@ -84,8 +91,8 @@ int main(int argc, char *argv[]) {
         }
 
         // Evolucionar BRKGA
-        brkga.evolve();
-        vector<int> best_solution = brkga.getBestSolution();
+        brkga.generacion();
+        vector<int> best_solution = brkga.getSolution();
 
         if ((int)best_solution.size() > best_size) {
             best_size = best_solution.size();

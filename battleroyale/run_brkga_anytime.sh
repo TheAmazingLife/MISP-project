@@ -57,7 +57,8 @@ else
 fi
 
 # Ruta al ejecutable
-EXE="${BASE_DIR}/battleroyale/brkga_standalone"
+# Ruta al ejecutable
+EXE="${BASE_DIR}/battleroyale/bin/brkga_standalone"
 
 # Verificar que existe el ejecutable
 if [ ! -f "$EXE" ]; then

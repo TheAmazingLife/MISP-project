@@ -22,6 +22,9 @@ if [ ! -d "battleroyale" ]; then
     exit 1
 fi
 
+# Crear carpeta bin si no existe
+mkdir -p battleroyale/bin
+
 # 1. Compilar SA standalone
 echo -e "${YELLOW}[1/2]${NC} Compilando Simulated Annealing standalone..."
 g++ -std=c++17 -pthread -O3 \
@@ -29,7 +32,7 @@ g++ -std=c++17 -pthread -O3 \
     metaheuristica/source/utils/GraphReader.cpp \
     -Ibattleroyale/source \
     -Imetaheuristica/source \
-    -o battleroyale/sa_standalone
+    -o battleroyale/bin/sa_standalone
 
 if [ $? -eq 0 ]; then
     echo -e "${GREEN}✓${NC} SA standalone compilado correctamente"
@@ -49,7 +52,7 @@ g++ -std=c++17 -pthread -O3 \
     -Ibattleroyale/source \
     -Imetaheuristica_poblacional/source \
     -Imetaheuristica/source \
-    -o battleroyale/brkga_standalone
+    -o battleroyale/bin/brkga_standalone
 
 if [ $? -eq 0 ]; then
     echo -e "${GREEN}✓${NC} BRKGA standalone compilado correctamente"
@@ -63,9 +66,9 @@ echo "╔═══════════════════════�
 echo "║                 ✓ Compilación exitosa                     ║"
 echo "╚════════════════════════════════════════════════════════════╝"
 echo ""
-echo "Ejecutables generados:"
-echo "  • battleroyale/sa_standalone"
-echo "  • battleroyale/brkga_standalone"
+echo "Ejecutables generados en battleroyale/bin/:"
+echo "  • battleroyale/bin/sa_standalone"
+echo "  • battleroyale/bin/brkga_standalone"
 echo ""
 echo "NOTA: BRKGA_HIBRID requiere CPLEX. Si está disponible, compílalo con:"
 echo "      bash battleroyale/scripts/compile_hibrid.sh"
