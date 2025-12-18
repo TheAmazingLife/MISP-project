@@ -1,10 +1,11 @@
 #!/bin/bash
 
 # Script para analizar los resultados de los experimentos Slurm
-# Genera un resumen en CSV con todos los resultados
+# Genera estadísticas por densidad con media y desviación estándar de las 30 iteraciones
 
 RESULTS_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/resultados"
 OUTPUT_CSV="${RESULTS_DIR}/analisis_resultados.csv"
+OUTPUT_SUMMARY_BY_DENSITY="${RESULTS_DIR}/resumen_por_densidad.csv"
 OUTPUT_SUMMARY="${RESULTS_DIR}/resumen_estadistico.txt"
 
 echo "========================================="
@@ -92,10 +93,55 @@ done
 
 echo ""
 echo "========================================="
-echo "Generando resumen estadístico..."
+echo "Generando resumen por densidad..."
 echo "========================================="
 
-# Generar resumen estadístico
+# Generar CSV con estadísticas por densidad (tamaño, densidad, media, desv)
+echo "tamaño,densidad,media,desviacion_std,min,max,n_instancias" > "$OUTPUT_SUMMARY_BY_DENSITY"
+
+# Procesar para cada tamaño
+for SIZE in 1000 2000 3000; do
+    echo "Procesando tamaño n=$SIZE..."
+    
+    # Procesar para cada densidad
+    for DENSITY in 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9; do
+        # Extraer valores para esta combinación tamaño-densidad
+        VALUES=$(awk -F',' -v size="n${SIZE}" -v dens="${DENSITY}" '
+            NR>1 && $1 ~ size && $1 ~ ("p0c"dens"_") && $5 != "N/A" {
+                print $5
+            }' "$OUTPUT_CSV")
+        
+        if [ -n "$VALUES" ]; then
+            # Calcular estadísticas usando awk
+            STATS=$(echo "$VALUES" | awk '{
+                sum += $1
+                sumsq += ($1)^2
+                count++
+                if (NR==1 || $1 < min) min = $1
+                if (NR==1 || $1 > max) max = $1
+            }
+            END {
+                if (count > 0) {
+                    mean = sum / count
+                    variance = (sumsq / count) - (mean^2)
+                    std = (variance > 0) ? sqrt(variance) : 0
+                    printf "%.2f,%.2f,%d,%d,%d", mean, std, min, max, count
+                }
+            }')
+            
+            if [ -n "$STATS" ]; then
+                echo "$SIZE,$DENSITY,$STATS" >> "$OUTPUT_SUMMARY_BY_DENSITY"
+            fi
+        fi
+    done
+done
+
+echo ""
+echo "========================================="
+echo "Generando resumen estadístico general..."
+echo "========================================="
+
+# Generar resumen estadístico general
 {
     echo "========================================"
     echo "RESUMEN ESTADÍSTICO - EXPERIMENTOS SLURM"
@@ -120,25 +166,30 @@ echo "========================================="
     awk -F',' 'NR>1 {print $2}' "$OUTPUT_CSV" | sort -u
     echo ""
     
-    # Si hay valores objetivos numéricos, calcular estadísticas
-    if awk -F',' 'NR>1 && $5 != "N/A" {exit 0} END {exit 1}' "$OUTPUT_CSV"; then
-        echo "ESTADÍSTICAS DE VALORES OBJETIVO:"
-        awk -F',' 'NR>1 && $5 != "N/A" {sum+=$5; count++; if(min=="" || $5<min) min=$5; if($5>max) max=$5} 
-                  END {
-                      if(count>0) {
-                          printf "  - Mínimo: %d\n", min
-                          printf "  - Máximo: %d\n", max
-                          printf "  - Promedio: %.2f\n", sum/count
-                          printf "  - Total evaluaciones: %d\n", count
-                      }
-                  }' "$OUTPUT_CSV"
+    echo "========================================"
+    echo "RESUMEN POR DENSIDAD Y TAMAÑO"
+    echo "========================================"
+    echo ""
+    
+    # Mostrar tabla formateada
+    for SIZE in 1000 2000 3000; do
+        echo "TAMAÑO: n=$SIZE"
+        echo "$(printf '%-10s %-12s %-12s %-8s %-8s %-12s' 'Densidad' 'Media' 'Desv.Std' 'Min' 'Max' 'N.Instancias')"
+        echo "$(printf '%s' '------------------------------------------------------------------------')"
+        
+        awk -F',' -v size="$SIZE" '
+            NR>1 && $1 == size {
+                printf "%-10s %-12.2f %-12.2f %-8d %-8d %-12d\n", $2, $3, $4, $5, $6, $7
+            }
+        ' "$OUTPUT_SUMMARY_BY_DENSITY"
         echo ""
-    fi
+    done
     
     echo "========================================"
     echo "ARCHIVOS GENERADOS:"
     echo "  - CSV completo: $OUTPUT_CSV"
-    echo "  - Resumen: $OUTPUT_SUMMARY"
+    echo "  - Resumen por densidad: $OUTPUT_SUMMARY_BY_DENSITY"
+    echo "  - Resumen general: $OUTPUT_SUMMARY"
     echo "========================================"
     
 } | tee "$OUTPUT_SUMMARY"
@@ -147,4 +198,5 @@ echo ""
 echo "Análisis completado exitosamente!"
 echo "Revisa los archivos:"
 echo "  - $OUTPUT_CSV"
+echo "  - $OUTPUT_SUMMARY_BY_DENSITY"
 echo "  - $OUTPUT_SUMMARY"
