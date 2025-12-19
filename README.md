@@ -146,13 +146,13 @@ Debido a la dependencia con CPLEX, el comando de compilación es más extenso y 
 
 ```bash
 g++ -std=c++17 -DIL_STD \
-    brkga.cpp brkga_class.cpp utils/GraphReader.cpp \
-    -o brkga \
-    -I/opt/ibm/ILOG/CPLEX_Studio/cplex/include \
-    -I/opt/ibm/ILOG/CPLEX_Studio/concert/include \
-    -L/opt/ibm/ILOG/CPLEX_Studio/cplex/lib/x86-64_linux/static_pic \
-    -L/opt/ibm/ILOG/CPLEX_Studio/concert/lib/x86-64_linux/static_pic \
-    -lilocplex -lcplex -lconcert -lm -lpthread -ldl
+    source/brkga.cpp source/brkga_class.cpp source/utils/GraphReader.cpp \
+    -o source/brkga \
+    -I/opt/ibm/ILOG/CPLEX_Studio_Community2212/cplex/include \
+    -I/opt/ibm/ILOG/CPLEX_Studio_Community2212/concert/include \
+    -L/opt/ibm/ILOG/CPLEX_Studio_Community2212/concert/lib/x86-64_linux/static_pic \
+    -L/opt/ibm/ILOG/CPLEX_Studio_Community2212/cplex/lib/x86-64_linux/static_pic \
+    -lconcert -lilocplex -lcplex -lm -lpthread
 ```
 
 El proyecto incluye el archivo `tasks.json` en la carpeta raíz para facilitar la compilación. Dado que la configuración local `.vscode/` no se incluye en el repositorio (por `.gitignore`), debes realizar un paso de configuración sencillo si deseas usar estas automatizaciones.
@@ -261,8 +261,8 @@ Donde `<k>` es el tamaño de la Lista Restringida de Candidatos (RCL).
 **Ejemplos**:
 
 ```bash
-./brkga -i dataset_grafos_no_dirigidos/new_1000_dataset/erdos_n1000_p0.1.graph \
-        -t 10 -p 1000 -pe 0.15 -pm 0.15 -rhoe 0.7 -seed 42
+./brkga -i dataset_grafos_no_dirigidos/new_1000_dataset/erdos_n1000_p0.1.graph
+        -t 30 -p 100 -pe 0.2 -pm 0.1 -rhoe 0.7 -seed 42
 ```
 
 ---

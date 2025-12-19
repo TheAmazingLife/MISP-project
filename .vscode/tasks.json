@@ -1,0 +1,55 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compilar CPLEX C++ (g++)",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                // Archivo fuente a compilar
+                "${file}",
+                // Archivo de salida
+                "-o", 
+                "${fileDirname}/${fileBasenameNoExtension}",
+                
+                // === Directorios de Inclusión ===
+                //"-I/home/keko-jones/CPLEX/cplex/include",
+                //"-I/home/keko-jones/CPLEX/concert/include",
+                "-I/opt/ibm/ILOG/CPLEX_Studio_Community2212/cplex/include",
+                "-I/opt/ibm/ILOG/CPLEX_Studio_Community2212/concert/include",
+
+                // === Directorios de Biblioteca (¡DOS RUTAS!) ===
+                // 1. Ruta de las librerías de Concert
+                //"-L/home/keko-jones/CPLEX/concert/lib/x86-64_linux/static_pic",
+                // 2. Ruta de las librerías de CPLEX
+                //"-L/home/keko-jones/CPLEX/cplex/lib/x86-64_linux/static_pic",
+                
+                // 1. Ruta de las librerías de Concert
+                "-L/opt/ibm/ILOG/CPLEX_Studio_Community2212/concert/lib/x86-64_linux/static_pic",
+                // 2. Ruta de las librerías de CPLEX
+                "-L/opt/ibm/ILOG/CPLEX_Studio_Community2212/cplex/lib/x86-64_linux/static_pic",
+
+
+
+                // === Bibliotecas (¡ORDEN IMPORTA!) ===
+                // 1. Concert (base para todo)
+                "-lconcert", 
+                // 2. IloCPLEX (depende de Concert)
+                "-lilocplex", 
+                // 3. Núcleo de CPLEX (depende de IloCPLEX)
+                "-lcplex",
+                // 4. Bibliotecas del sistema
+                "-lm", 
+                "-lpthread"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always"
+            },
+            "problemMatcher": "$gcc"
+        }
+    ]
+}
